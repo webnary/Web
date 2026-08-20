@@ -507,7 +507,7 @@
   .wave-line path.accent{stroke:var(--purple-bright);opacity:.35;}
 
   /* ---------- FLOATING WHATSAPP ---------- */
-  .wa-picker--fixed{position:fixed;bottom:26px;right:26px;z-index:200;}
+  .wa-picker.wa-picker--fixed{position:fixed;bottom:26px;right:26px;z-index:200;}
   .wa-fixed{
     width:58px;height:58px;border-radius:50%;
     background:var(--purple);display:flex;align-items:center;justify-content:center;
