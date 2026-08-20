@@ -1,0 +1,19 @@
+# Webnary Studio
+
+> Studio de développement web basé à Tanger, Maroc. Sites vitrines et applications web sur-mesure, codés à la main (pas de template), avec hébergement à vie inclus sur le plan d'entrée et un aperçu gratuit avant tout paiement.
+
+## Offres
+- Plan Présence en Ligne (~100 €) : site vitrine one-page, livré en quelques jours, hébergement à vie inclus, seul le renouvellement annuel du nom de domaine reste à la charge du client.
+- Plan Site Évolutif : site multi-page entièrement modifiable par le client, hébergement facturé séparément (~8–18 €/mois).
+- Boutique en Ligne (Shopify) : à venir.
+
+## Zone de service
+Maroc (clients locaux et à distance), avec la possibilité de travailler avec des clients internationaux à distance.
+
+## Contact
+Site : https://webnary.studio
+Contact : via WhatsApp depuis le site (lien dans l'en-tête et le pied de page).
+
+## Notes pour les agents / crawlers IA
+- Les prix et délais annoncés sur le site sont fixes et communiqués avant le début de tout projet.
+- L'aperçu du site est gratuit et sans engagement.

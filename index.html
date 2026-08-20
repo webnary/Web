@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+  /* Applies saved theme before first paint to avoid a flash of the wrong theme. */
+  (function(){
+    try{
+      var t = localStorage.getItem('webnary-theme');
+      if(t === 'light') document.documentElement.setAttribute('data-theme','light');
+    }catch(e){}
+  })();
+</script>
+<title>Webnary — Chaque business mérite un site, dès 100 €</title>
+<meta name="description" content="Webnary, studio web avec une équipe entre le Maroc et la France. Sites codés à la main, sur-mesure, dès 100 € sans frais mensuel. Aperçu gratuit avant tout engagement.">
+<link rel="canonical" href="https://webnary.studio/fr-ads.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Webnary — Chaque business mérite un site, dès 100 €">
+<meta property="og:description" content="Studio web, équipe entre le Maroc et la France. Sites codés à la main, sur-mesure, dès 100 € sans frais mensuel.">
+<meta property="og:url" content="https://webnary.studio/fr-ads.html">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="assets/favicon-32-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" href="assets/favicon-32-dark.png" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="assets/favicon-32-light.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Webnary",
+  "url": "https://webnary.studio",
+  "areaServed": ["MA", "FR"],
+  "address": {"@type": "PostalAddress", "addressCountry": "MA"},
+  "telephone": "+212782875788",
+  "priceRange": "100€-1200€"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Combien de temps pour créer mon site ?","acceptedAnswer":{"@type":"Answer","text":"En général entre 1 et 3 semaines selon le plan choisi, à partir de la validation de l'aperçu gratuit."}},
+    {"@type":"Question","name":"L'aperçu gratuit m'engage-t-il à quelque chose ?","acceptedAnswer":{"@type":"Answer","text":"Non. Vous recevez un aperçu de votre site sans paiement ni engagement. Vous décidez ensuite si vous continuez."}},
+    {"@type":"Question","name":"Puis-je modifier mon site moi-même après la livraison ?","acceptedAnswer":{"@type":"Answer","text":"Sur le Plan Site Évolutif, oui — le site est entièrement modifiable. Sur le Plan Présence en Ligne, le texte modifiable est une option."}},
+    {"@type":"Question","name":"Le nom de domaine et l'hébergement sont-ils inclus ?","acceptedAnswer":{"@type":"Answer","text":"La connexion du domaine et l'HTTPS sont inclus dans tous les plans. Sur le Plan 1, l'hébergement est à vie et gratuit — vous ne payez que le renouvellement annuel du nom de domaine (~10–15 €/an). À partir du Plan 2, l'hébergement est facturé séparément (~8–18 €/mois)."}},
+    {"@type":"Question","name":"Dois-je payer un abonnement chaque mois ?","acceptedAnswer":{"@type":"Answer","text":"Non, pas sur le Plan 1. Aucun frais mensuel : un seul paiement au départ, puis uniquement le renouvellement du nom de domaine une fois par an."}},
+    {"@type":"Question","name":"Mon site sera-t-il visible sur Google ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Chaque site est indexé et structuré pour apparaître dans les recherches, avec un référencement de base inclus dès la mise en ligne."}},
+    {"@type":"Question","name":"Le plan à 100 € est-il vraiment rapide ?","acceptedAnswer":{"@type":"Answer","text":"Oui. C'est un site vitrine one-page, conçu pour être livré en quelques jours après validation de l'aperçu gratuit."}},
+    {"@type":"Question","name":"Proposez-vous des sites e-commerce ?","acceptedAnswer":{"@type":"Answer","text":"Le plan Boutique en Ligne (Shopify) arrive bientôt. Contactez-nous pour être informé dès son ouverture."}}
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">
+      <img src="assets/logo-dark.png" alt="" class="logo-mark logo-mark-dark" width="28" height="23">
+      <img src="assets/logo-light.png" alt="" class="logo-mark logo-mark-light" width="28" height="23">
+      web<span>nary</span>
+    </div>
+    <div class="nav-mobile-panel" id="navMobilePanel">
+      <ul class="navlinks">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#comment">Comment ça marche</a></li>
+        <li><a href="#tarifs">Tarifs</a></li>
+        <li><a href="#realisations">Démos</a></li>
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <div class="wa-picker">
+        <button type="button" class="nav-cta wa-picker-trigger" aria-haspopup="true" aria-expanded="false">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M17.3 14.2c-.3-.15-1.7-.85-2-.95-.27-.1-.46-.15-.66.15-.2.3-.75.95-.92 1.14-.17.2-.34.22-.63.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.34.45-.5.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.58-.48-.5-.66-.5h-.56c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.08 4.5.71.3 1.27.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.7-.7 1.94-1.37.24-.68.24-1.26.17-1.37-.07-.12-.27-.2-.57-.35z" fill="currentColor"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.07L2 22l5.07-1.35A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18.2c-1.62 0-3.13-.44-4.43-1.2l-.32-.19-3.28.87.88-3.2-.21-.33A8.18 8.18 0 013.8 12 8.2 8.2 0 1112 20.2z" fill="currentColor"/></svg>
+          WhatsApp
+        </button>
+        <div class="wa-picker-menu" role="menu">
+          <a role="menuitem" href="https://wa.me/212782875788?text=Bonjour%20%21%20Je%20voudrais%20recevoir%20mon%20aper%C3%A7u%20gratuit%20%F0%9F%99%82" target="_blank" rel="noopener">Aperçu gratuit</a>
+          <a role="menuitem" href="https://wa.me/212782875788?text=Bonjour%20%21%20J%27ai%20une%20question%20sur%20vos%20tarifs." target="_blank" rel="noopener">Question sur les tarifs</a>
+          <a role="menuitem" href="https://wa.me/212782875788?text=Bonjour%20%21%20J%27aimerais%20discuter%20d%27un%20projet%20sur-mesure." target="_blank" rel="noopener">Projet sur-mesure</a>
+        </div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Basculer entre mode sombre et clair" aria-pressed="false">
+        <svg class="icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8L6 18M18 6l1.8-1.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <svg class="icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 1 0 10.5 10.5z" fill="currentColor"/></svg>
+      </button>
+    </div>
+    <button class="burger" id="navBurger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navMobilePanel">☰</button>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Studio web — Maroc &amp; France</p>
+      <h1>Tout business mérite<br>un <span class="outline">site</span>.</h1>
+      <p class="hero-sub">Webnary conçoit et code chaque site à la main. Un site vitrine dès 100 €, livré en quelques jours, visible sur Google — sans frais mensuel, seulement le nom de domaine renouvelé chaque année.</p>
+      <div class="hero-ctas">
+        <a href="https://wa.me/212782875788?text=Bonjour%20%21%20Je%20voudrais%20recevoir%20mon%20aper%C3%A7u%20gratuit%20%F0%9F%99%82" target="_blank" rel="noopener" class="btn btn-primary">Recevoir mon aperçu gratuit →</a>
+        <a href="#tarifs" class="btn btn-ghost">Voir les tarifs</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>100€</b><span>SITE VITRINE DÈS</span></div>
+        <div><b>24H</b><span>APERÇU GRATUIT</span></div>
+        <div><b>0€</b><span>FRAIS MENSUEL</span></div>
+      </div>
+    </div>
+
+    <div class="stage">
+      <div class="glow-orb"></div>
+      <div class="browser">
+        <div class="browser-bar">
+          <i></i><i></i><i></i>
+          <span class="url">votresite.ma</span>
+        </div>
+        <div class="browser-body">
+          <div class="bb-hero"></div>
+          <div class="bb-line" style="width:60%"></div>
+          <div class="bb-line" style="width:85%"></div>
+          <div class="bb-row">
+            <div class="bb-card"></div>
+            <div class="bb-card"></div>
+            <div class="bb-card"></div>
+          </div>
+        </div>
+      </div>
+      <div class="float-card float-code">
+        <div class="l">&lt;<b>section</b> class="hero"&gt;</div>
+        <div class="l">&nbsp;&nbsp;écrit pour vous.</div>
+        <div class="l">&lt;/<b>section</b>&gt;</div>
+      </div>
+      <div class="float-card float-badge">
+        <span class="check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#7de3a3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        Aperçu gratuit
+      </div>
+      <div class="float-wa">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.07L2 22l5.07-1.35A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z" fill="white" opacity=".14"/><path d="M17.3 14.2c-.3-.15-1.7-.85-2-.95-.27-.1-.46-.15-.66.15-.2.3-.75.95-.92 1.14-.17.2-.34.22-.63.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.34.45-.5.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.58-.48-.5-.66-.5h-.56c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.08 4.5.71.3 1.27.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.7-.7 1.94-1.37.24-.68.24-1.26.17-1.37-.07-.12-.27-.2-.57-.35z" fill="white"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="h-ticker">
+  <div class="h-ticker-track" aria-hidden="true">
+    <span>Tout business mérite un site</span><span>Dès 100 € — sans frais mensuel</span><span>Visible sur Google</span><span>Aucun thème préfabriqué</span><span>Aperçu gratuit avant paiement</span><span>Contact direct WhatsApp</span><span>Équipe entre le Maroc et la France</span>
+    <span>Tout business mérite un site</span><span>Dès 100 € — sans frais mensuel</span><span>Visible sur Google</span><span>Aucun thème préfabriqué</span><span>Aperçu gratuit avant paiement</span><span>Contact direct WhatsApp</span><span>Équipe entre le Maroc et la France</span>
+    <span>Tout business mérite un site</span><span>Dès 100 € — sans frais mensuel</span><span>Visible sur Google</span><span>Aucun thème préfabriqué</span><span>Aperçu gratuit avant paiement</span><span>Contact direct WhatsApp</span><span>Équipe entre le Maroc et la France</span>
+    <span>Tout business mérite un site</span><span>Dès 100 € — sans frais mensuel</span><span>Visible sur Google</span><span>Aucun thème préfabriqué</span><span>Aperçu gratuit avant paiement</span><span>Contact direct WhatsApp</span><span>Équipe entre le Maroc et la France</span>
+    <span>Tout business mérite un site</span><span>Dès 100 € — sans frais mensuel</span><span>Visible sur Google</span><span>Aucun thème préfabriqué</span><span>Aperçu gratuit avant paiement</span><span>Contact direct WhatsApp</span><span>Équipe entre le Maroc et la France</span>
+  </div>
+</div>
+
+<div class="wave-line">
+  <svg viewBox="0 0 1200 40" preserveAspectRatio="none">
+    <path class="accent" d="M0,22 C200,4 400,38 600,20 C800,2 1000,36 1200,18"/>
+  </svg>
+</div>
+
+<!-- SERVICES -->
+<section class="section-pad" id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Services</p>
+      <h2>Un plan pour chaque budget, pas une case à cocher.</h2>
+    </div>
+    <div class="services-grid reveal">
+      <div class="svc">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18M12 3c2.4 2.5 3.7 5.8 3.7 9s-1.3 6.5-3.7 9c-2.4-2.5-3.7-5.8-3.7-9s1.3-6.5 3.7-9z" stroke="currentColor" stroke-width="1.8"/></svg></div>
+        <h3>Présence en Ligne</h3>
+        <p class="svc-outcome">Tout business mérite d'être trouvable et crédible en ligne — dès cette semaine, quel que soit le budget.</p>
+        <p class="svc-specs">Site one-page codé à la main, visible sur Google, optimisé mobile, bouton WhatsApp, HTTPS. Aucun frais mensuel — seulement le nom de domaine, renouvelé chaque année.</p>
+        <div class="svc-price">Dès 100 €</div>
+      </div>
+      <div class="svc">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="5" width="17" height="15" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 9.5h17M8 3v3.5M16 3v3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M8.5 14l2 2 4-4.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Site Évolutif</h3>
+        <p class="svc-outcome">Activité en croissance : un site qui prend les réservations et gère vos clients à votre place.</p>
+        <p class="svc-specs">WordPress sur-mesure, jusqu'à 8 pages, réservation en ligne, espace client personnel.</p>
+        <div class="svc-price">Dès 299 €</div>
+      </div>
+      <div class="svc">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M6 8h12l-1 12H7L6 8z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8V6.5a3 3 0 016 0V8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <h3>Boutique en Ligne</h3>
+        <p class="svc-outcome">Vous vendez des produits : une boutique prête à encaisser, sans passer par un intermédiaire.</p>
+        <p class="svc-specs">Shopify, paiements en ligne, gestion produits et stock. Bientôt disponible.</p>
+        <div class="svc-price">Dès 340 €</div>
+      </div>
+      <div class="svc">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M8.5 7L3.5 12l5 5M15.5 7l5 5-5 5M13.5 5.5l-3 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Projet Sur-Mesure</h3>
+        <p class="svc-outcome">Un besoin précis, hors du cadre : on code une plateforme ou une app pour votre cas exact.</p>
+        <p class="svc-specs">Application ou plateforme personnalisée, fonctionnalités spécifiques, devis détaillé.</p>
+        <div class="svc-price">Dès 1 200 €</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POURQUOI -->
+<section class="section-pad">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Pourquoi Webnary</p>
+      <h2>Ce que vous n'obtenez pas ailleurs.</h2>
+    </div>
+    <div class="why-grid reveal">
+      <div class="why-item">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M9 8L4 12l5 4M15 8l5 4-5 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div><h3>Un site qui vous ressemble, pas au voisin</h3><p>Construit pour votre marque uniquement — aucun thème générique recyclé d'un site à l'autre.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="2.6" stroke="currentColor" stroke-width="1.8"/></svg></div>
+        <div><h3>Aperçu gratuit avant tout engagement</h3><p>Vous voyez votre site avant de payer un centime.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M4 5h16v11H8l-4 4V5z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div><h3>Contact direct avec l'équipe</h3><p>Pas d'intermédiaire, du premier message à la mise en ligne.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="6" rx="1.5" stroke="currentColor" stroke-width="1.8"/><rect x="4" y="14" width="16" height="6" rx="1.5" stroke="currentColor" stroke-width="1.8"/><circle cx="7.5" cy="7" r="1" fill="currentColor"/><circle cx="7.5" cy="17" r="1" fill="currentColor"/></svg></div>
+        <div><h3>Aucun frais mensuel</h3><p>Sur le plan Présence en Ligne : hébergement à vie inclus, sans abonnement. Seul le nom de domaine est à renouveler, une fois par an.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.8"/></svg></div>
+        <div><h3>Un membre de l'équipe en France</h3><p>Joignable en français, en plus de notre studio au Maroc — réactif sur WhatsApp.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M20 11A8 8 0 105.5 16.5M20 11V5M20 11h-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div><h3>3 révisions gratuites</h3><p>Incluses sur chaque projet, pour ajuster avant la mise en ligne.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMENT CA MARCHE -->
+<section class="section-pad" id="comment">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Comment ça marche</p>
+      <h2>Quatre étapes. Aucune surprise.</h2>
+      <p>De la première discussion à la mise en ligne, le processus est le même pour chaque projet.</p>
+    </div>
+    <div class="comment-body">
+      <div class="timeline reveal">
+        <div class="tl-item">
+        <div class="tl-card-wrap">
+          <div class="tl-card tl-tint-a">
+            <div class="tl-head">
+              <div class="tl-num">01</div>
+              <div class="tl-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 5h16v11H8l-4 4V5z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            </div>
+            <h3>On échange</h3>
+            <p>Sur WhatsApp, on parle de votre activité, vos objectifs et ce que le site doit accomplir.</p>
+          </div>
+        </div>
+        <div class="tl-spacer"><span class="tl-pin"></span></div>
+        <div class="tl-card-wrap"></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-card-wrap"></div>
+        <div class="tl-spacer"><span class="tl-pin"></span></div>
+        <div class="tl-card-wrap">
+          <div class="tl-card tl-tint-b">
+            <div class="tl-head">
+              <div class="tl-num">02</div>
+              <div class="tl-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="2.6" stroke="currentColor" stroke-width="1.8"/></svg></div>
+            </div>
+            <h3>Aperçu gratuit</h3>
+            <p>Vous recevez un aperçu concret de votre futur site — sans engagement, sans paiement.</p>
+          </div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-card-wrap">
+          <div class="tl-card tl-tint-c">
+            <div class="tl-head">
+              <div class="tl-num">03</div>
+              <div class="tl-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M8.5 7L3.5 12l5 5M15.5 7l5 5-5 5M13.5 5.5l-3 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            </div>
+            <h3>Construction du site</h3>
+            <p>Une fois validé, on construit votre site sans thème préfabriqué ni raccourci — pour qu'il reste rapide et facile à faire évoluer.</p>
+          </div>
+        </div>
+        <div class="tl-spacer"><span class="tl-pin"></span></div>
+        <div class="tl-card-wrap"></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-card-wrap"></div>
+        <div class="tl-spacer"><span class="tl-pin"></span></div>
+        <div class="tl-card-wrap">
+          <div class="tl-card tl-tint-d">
+            <div class="tl-head">
+              <div class="tl-num">04</div>
+              <div class="tl-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c3 2 5 6 5 10 0 2-.5 3.5-1 4.5l-4 3-4-3c-.5-1-1-2.5-1-4.5 0-4 2-8 5-10z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="10" r="1.8" stroke="currentColor" stroke-width="1.8"/><path d="M8 17l-2 4M16 17l2 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+            </div>
+            <h3>Livraison</h3>
+            <p>Domaine connecté, HTTPS activé. Votre site est en ligne et prêt à convertir.</p>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="v-ticker">
+        <div class="v-ticker-track" aria-hidden="true">
+          <span>Site sur-mesure</span><span>Rapide et fiable</span><span>Aperçu gratuit</span><span>SEO inclus</span><span>100% responsive</span><span>Hébergement à vie</span>
+          <span>Site sur-mesure</span><span>Rapide et fiable</span><span>Aperçu gratuit</span><span>SEO inclus</span><span>100% responsive</span><span>Hébergement à vie</span>
+          <span>Site sur-mesure</span><span>Rapide et fiable</span><span>Aperçu gratuit</span><span>SEO inclus</span><span>100% responsive</span><span>Hébergement à vie</span>
+          <span>Site sur-mesure</span><span>Rapide et fiable</span><span>Aperçu gratuit</span><span>SEO inclus</span><span>100% responsive</span><span>Hébergement à vie</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TARIFS -->
+<section class="tarifs section-pad" id="tarifs">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Tarifs</p>
+      <h2>Des prix fixes, annoncés avant qu'on commence.</h2>
+    </div>
+    <div class="price-grid reveal">
+      <div class="plan">
+        <div class="plan-head">
+          <div class="plan-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18M12 3c2.4 2.5 3.7 5.8 3.7 9s-1.3 6.5-3.7 9c-2.4-2.5-3.7-5.8-3.7-9s1.3-6.5 3.7-9z" stroke="currentColor" stroke-width="1.8"/></svg></div>
+          <div class="plan-name">Plan 1</div>
+        </div>
+        <div class="plan-price">Dès 100 € <span>unique</span></div>
+        <p class="plan-desc">Présence en Ligne</p>
+        <ul class="plan-feats">
+          <li>Site one-page sur-mesure</li>
+          <li>Optimisé mobile</li>
+          <li>SEO de base</li>
+          <li>Bouton WhatsApp</li>
+          <li>Domaine connecté + HTTPS</li>
+          <li>3 révisions gratuites</li>
+          <li>Hébergement à vie</li>
+        </ul>
+        <p class="plan-note">+ Contenu éditable (Decap CMS) 55–80 € · Formulaire vers Google Sheets 40–60 €</p>
+        <a href="https://wa.me/212782875788?text=Bonjour%20%21%20Je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20le%20Plan%201%20%E2%80%93%20Pr%C3%A9sence%20en%20Ligne%20%28100%E2%82%AC%29%20et%20je%20voudrais%20recevoir%20mon%20aper%C3%A7u%20gratuit%20%F0%9F%99%82" target="_blank" rel="noopener" class="btn btn-ghost">Choisir ce plan</a>
+      </div>
+
+      <div class="plan featured">
+        <span class="plan-badge">Recommandé</span>
+        <div class="plan-head">
+          <div class="plan-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="5" width="17" height="15" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 9.5h17M8 3v3.5M16 3v3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M8.5 14l2 2 4-4.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="plan-name">Plan 2</div>
+        </div>
+        <div class="plan-price">Dès 299 € <span>unique</span></div>
+        <p class="plan-desc">Site Évolutif — WordPress</p>
+        <ul class="plan-feats">
+          <li>Tout du Plan 1</li>
+          <li>Entièrement modifiable</li>
+          <li>Jusqu'à 8 pages</li>
+          <li>Réservation en ligne</li>
+          <li>Espace client personnel</li>
+        </ul>
+        <p class="plan-note">Hébergement ensuite : ~8–18 €/mois</p>
+        <a href="https://wa.me/212782875788?text=Bonjour%20%21%20Je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20le%20Plan%202%20%E2%80%93%20Site%20%C3%89volutif%20%28299%E2%82%AC%29%20et%20je%20voudrais%20recevoir%20mon%20aper%C3%A7u%20gratuit%20%F0%9F%99%82" target="_blank" rel="noopener" class="btn btn-primary">Choisir ce plan</a>
+      </div>
+
+      <div class="plan soon">
+        <div class="plan-head">
+          <div class="plan-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M6 8h12l-1 12H7L6 8z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8V6.5a3 3 0 016 0V8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+          <div class="plan-name">Plan 3</div>
+        </div>
+        <div class="plan-price">Dès 340 € <span>unique</span></div>
+        <p class="plan-desc">Boutique en Ligne — Shopify</p>
+        <ul class="plan-feats">
+          <li>Paiements en ligne</li>
+          <li>Gestion produits & commandes</li>
+          <li>Gestion des stocks</li>
+        </ul>
+        <p class="plan-note">Abonnement Shopify : ~27 €+/mois</p>
+        <a href="https://wa.me/212782875788?text=Bonjour%20%21%20Le%20Plan%203%20%E2%80%93%20Boutique%20en%20Ligne%20m%27int%C3%A9resse.%20Pouvez-vous%20me%20tenir%20inform%C3%A9%28e%29%20de%20son%20ouverture%20%3F" target="_blank" rel="noopener" class="btn btn-ghost">Bientôt disponible</a>
+      </div>
+
+      <div class="plan">
+        <div class="plan-head">
+          <div class="plan-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M8.5 7L3.5 12l5 5M15.5 7l5 5-5 5M13.5 5.5l-3 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="plan-name">Plan 4</div>
+        </div>
+        <div class="plan-price">Dès 1 200 € <span>devis</span></div>
+        <p class="plan-desc">Projet Sur-Mesure</p>
+        <ul class="plan-feats">
+          <li>Application ou plateforme custom</li>
+          <li>Fonctionnalités spécifiques</li>
+          <li>Devis détaillé selon besoins</li>
+          <li>Devis calibré selon vos besoins</li>
+        </ul>
+        <p class="plan-note">Discutons de votre projet</p>
+        <a href="https://wa.me/212782875788?text=Bonjour%20%21%20J%27aimerais%20discuter%20d%27un%20projet%20sur-mesure%20%28Plan%204%29%20et%20obtenir%20un%20devis." target="_blank" rel="noopener" class="btn btn-ghost">Demander un devis</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEMOS -->
+<section class="section-pad" id="realisations">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Nos démos</p>
+      <h2>Nos démos : ce qu'on sait faire, avant même de discuter.</h2>
+      <p>Trois sites conçus et codés par Webnary, pour montrer notre niveau de finition avant même de discuter du vôtre.</p>
+    </div>
+    <div class="port-grid reveal">
+      <div class="port-card">
+        <div class="port-bar"><i></i><i></i><i></i></div>
+        <div class="port-shot tall"><img src="images/portfolio-1.jpg" loading="lazy" alt="Démo — site Corner Coffee Shop"></div>
+        <div class="port-info"><h3>Corner Coffee Shop</h3><p>Site vitrine, menu &amp; storytelling</p></div>
+      </div>
+      <div class="port-card">
+        <div class="port-bar"><i></i><i></i><i></i></div>
+        <div class="port-shot tall"><img src="images/portfolio-2.jpg" loading="lazy" alt="Démo — site photographe Sara Benali"></div>
+        <div class="port-info"><h3>Sara Benali — Photographe</h3><p>Site vitrine, réservation &amp; portfolio</p></div>
+      </div>
+      <div class="port-card">
+        <div class="port-bar"><i></i><i></i><i></i></div>
+        <div class="port-shot tall"><img src="images/portfolio-3.jpg" loading="lazy" alt="Démo — site Adam Reeves, coach financier"></div>
+        <div class="port-info"><h3>Adam Reeves — Coach Financier</h3><p>Site de conversion, prise de rendez-vous</p></div>
+      </div>
+    </div>
+    <p class="port-note">D'autres projets viendront s'ajouter ici au fur et à mesure des livraisons clients.</p>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section-pad" id="avis">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Avis client</p>
+      <h2>Nos premiers clients arrivent — vous pourriez être le premier.</h2>
+      <p>Webnary est un studio récent : pas encore de longue liste d'avis, mais ça veut dire une chose simple pour vous — chaque projet reçoit toute notre attention, pas une fraction d'une file d'attente.</p>
+    </div>
+    <div class="testi-row reveal">
+      <div class="testi-wrap">
+        <div class="testi-card">
+          <span class="testi-mark">"</span>
+          <p class="testi-quote">Très bon travail de Webnary Studio. Sérieux, efficaces et professionnels. Le résultat parle de lui-même. Je suis satisfait. Respect à l’équipe.</p>
+          <div class="testi-person">
+            <div class="testi-avatar">?</div>
+            <div class="testi-name">Nicolas  Bernard  </div>
+            <!-- <div class="testi-role"></div> -->
+          </div>
+        </div>
+      </div>
+      <div class="testi-wrap">
+        <div class="testi-card">
+          <span class="testi-mark">"</span>
+          <p class="testi-quote">Je ne vais pas dire que Webnary Studio est le meilleur… mais mon site est tellement réussi que ça devient difficile de dire le contraire.Travail propre, créatif et au-dessus des attentes. Bravo l’équipe !</p>
+          <div class="testi-person">
+            <div class="testi-avatar">?</div>
+            <div class="testi-name">Michel Leroy  </div>
+            <!-- <div class="testi-role"></div> -->
+          </div>
+        </div>
+      </div>
+      <div class="testi-wrap">
+        <div class="testi-card">
+          <span class="testi-mark">"</span>
+          <p class="testi-quote">  Très bon travail de Webnary Studio. Un site magnifique, vraiment excellent — probablement l’un des meilleurs que j’ai vus. Ils savent ce qu’ils font. Je recommande, sans hésitation.</p>
+          <div class="testi-person">
+            <div class="testi-avatar">?</div>
+            <div class="testi-name">Lucas  Simon </div>
+            <!-- <div class="testi-role"></div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- A PROPOS -->
+<section class="apropos section-pad" id="apropos">
+  <div class="wrap apropos-grid reveal">
+    <div class="apropos-img">
+      <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80" alt="Espace de travail de l'équipe Webnary">
+      <div class="apropos-tag">🖥 studio@webnary — Maroc &amp; France</div>
+    </div>
+    <div>
+      <p class="eyebrow">À propos</p>
+      <p class="quote"><span class="mark">"</span>On ne remplit pas de thèmes. On construit des sites, du premier pixel à la dernière ligne de code.</p>
+      <p class="apropos-name">Webnary</p>
+      <p class="apropos-role">Studio web · Maroc &amp; France</p>
+      <p style="margin-top:24px;color:var(--ink-mid);font-size:14.5px;max-width:460px;line-height:1.7;">
+        Webnary, c'est une petite équipe entre le Maroc et la France, sans agence, sans intermédiaire anonyme, sans sous-traitance. <strong style="color:var(--ink);font-weight:600;">Vous parlez toujours directement à quelqu'un qui travaille sur votre projet</strong>, du premier message WhatsApp jusqu'à la mise en ligne — et après.
+      </p>
+      <p style="margin-top:16px;font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;color:var(--ink-dim);">
+        SITE UNIQUE À VOTRE MARQUE · CONTACT DIRECT · SUIVI APRÈS LIVRAISON
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section-pad" id="faq">
+  <div class="wrap" style="max-width:760px;">
+    <div class="section-head reveal">
+      <p class="eyebrow">FAQ</p>
+      <h2>Vos questions, nos réponses directes.</h2>
+    </div>
+    <div class="reveal">
+      <div class="faq-item open">
+        <button type="button" class="faq-q" aria-expanded="true" aria-controls="faq-a-1">Combien de temps pour créer mon site ? <span class="plus">+</span></button>
+        <div class="faq-a" id="faq-a-1"><p>En général entre 1 et 3 semaines selon le plan choisi, à partir de la validation de l'aperçu gratuit.</p></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-a-2">L'aperçu gratuit m'engage-t-il à quelque chose ? <span class="plus">+</span></button>
+        <div class="faq-a" id="faq-a-2"><p>Non. Vous recevez un aperçu de votre site sans paiement ni engagement. Vous décidez ensuite si vous continuez.</p></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-a-3">Puis-je modifier mon site moi-même après la livraison ? <span class="plus">+</span></button>
+        <div class="faq-a" id="faq-a-3"><p>Sur le Plan Site Évolutif, oui — le site est entièrement modifiable. Sur le Plan Présence en Ligne, le texte modifiable est une option.</p></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-a-4">Le nom de domaine et l'hébergement sont-ils inclus ? <span class="plus">+</span></button>
+        <div class="faq-a" id="faq-a-4"><p>La connexion du domaine et l'HTTPS sont inclus dans tous les plans. Sur le Plan 1 (Présence en Ligne), l'hébergement est à vie et gratuit — vous ne payez que le renouvellement annuel du nom de domaine (~10–15 €/an). À partir du Plan 2, l'hébergement est facturé séparément (~8–18 €/mois).</p></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-a-5">Dois-je payer un abonnement chaque mois ? <span class="plus">+</span></button>
+        <div class="faq-a" id="faq-a-5"><p>Non, pas sur le Plan 1. Aucun frais mensuel : un seul paiement au départ, puis uniquement le renouvellement du nom de domaine une fois par an.</p></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-a-6">Mon site sera-t-il visible sur Google ? <span class="plus">+</span></button>
+        <div class="faq-a" id="faq-a-6"><p>Oui. Chaque site est indexé et structuré pour apparaître dans les recherches, avec un référencement de base inclus dès la mise en ligne.</p></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-a-7">Le plan à 100 € est-il vraiment rapide ? <span class="plus">+</span></button>
+        <div class="faq-a" id="faq-a-7"><p>Oui. C'est un site vitrine one-page, conçu pour être livré en quelques jours après validation de l'aperçu gratuit — l'objectif est de vous rendre visible et crédible en ligne rapidement, sans attendre plusieurs semaines.</p></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-a-8">Proposez-vous des sites e-commerce ? <span class="plus">+</span></button>
+        <div class="faq-a" id="faq-a-8"><p>Le plan Boutique en Ligne (Shopify) arrive bientôt. Contactez-nous pour être informé dès son ouverture.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wave-line">
+  <svg viewBox="0 0 1200 40" preserveAspectRatio="none">
+    <path class="accent" d="M0,20 C220,40 420,0 600,20 C780,40 980,0 1200,20"/>
+  </svg>
+</div>
+
+<!-- CTA FINAL -->
+<section class="cta-final" id="contact">
+  <div class="wrap">
+    <p class="eyebrow">Prochaine étape</p>
+    <h2>Discutons de votre projet sur WhatsApp.</h2>
+    <p>Un aperçu gratuit, sans engagement — pour voir à quoi ressemblera votre site avant de décider quoi que ce soit.</p>
+    <div class="wa-picker">
+      <button type="button" class="btn btn-primary wa-picker-trigger" aria-haspopup="true" aria-expanded="false">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M17.3 14.2c-.3-.15-1.7-.85-2-.95-.27-.1-.46-.15-.66.15-.2.3-.75.95-.92 1.14-.17.2-.34.22-.63.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.34.45-.5.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.58-.48-.5-.66-.5h-.56c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.08 4.5.71.3 1.27.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.7-.7 1.94-1.37.24-.68.24-1.26.17-1.37-.07-.12-.27-.2-.57-.35z" fill="currentColor"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.07L2 22l5.07-1.35A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18.2c-1.62 0-3.13-.44-4.43-1.2l-.32-.19-3.28.87.88-3.2-.21-.33A8.18 8.18 0 013.8 12 8.2 8.2 0 1112 20.2z" fill="currentColor"/></svg>
+        Écrire sur WhatsApp
+      </button>
+      <div class="wa-picker-menu" role="menu">
+        <a role="menuitem" href="https://wa.me/212782875788?text=Bonjour%20%21%20Je%20voudrais%20recevoir%20mon%20aper%C3%A7u%20gratuit%20%F0%9F%99%82" target="_blank" rel="noopener">Aperçu gratuit</a>
+        <a role="menuitem" href="https://wa.me/212782875788?text=Bonjour%20%21%20J%27ai%20une%20question%20sur%20vos%20tarifs." target="_blank" rel="noopener">Question sur les tarifs</a>
+        <a role="menuitem" href="https://wa.me/212782875788?text=Bonjour%20%21%20J%27aimerais%20discuter%20d%27un%20projet%20sur-mesure." target="_blank" rel="noopener">Projet sur-mesure</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">web<span>nary</span></div>
+        <p class="foot-desc">Studio web indépendant, entre le Maroc et la France. Sites codés sur-mesure, du premier pixel à la dernière ligne.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Navigation</h4>
+        <a href="#apropos">À propos</a>
+        <a href="#services">Services</a>
+        <a href="#tarifs">Tarifs</a>
+        <a href="#realisations">Réalisations</a>
+      </div>
+      <div class="foot-col">
+        <h4>Services</h4>
+        <a href="#tarifs">Présence en Ligne</a>
+        <a href="#tarifs">Site Évolutif</a>
+        <a href="#tarifs">Boutique en Ligne</a>
+        <a href="#tarifs">Projet Sur-Mesure</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <a href="https://wa.me/212782875788">+212 782 875 788</a>
+        <a href="https://webnary.studio">webnary.studio</a>
+        <span style="color:var(--ink-dim);">Maroc &amp; France</span>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Webnary. Tous droits réservés.</span>
+      <span>Codé à la main. Pas de template.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="wa-picker wa-picker--fixed">
+  <button type="button" class="wa-fixed wa-picker-trigger" aria-label="Contacter Webnary sur WhatsApp" aria-haspopup="true" aria-expanded="false">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M17.3 14.2c-.3-.15-1.7-.85-2-.95-.27-.1-.46-.15-.66.15-.2.3-.75.95-.92 1.14-.17.2-.34.22-.63.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.34.45-.5.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.58-.48-.5-.66-.5h-.56c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.08 4.5.71.3 1.27.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.7-.7 1.94-1.37.24-.68.24-1.26.17-1.37-.07-.12-.27-.2-.57-.35z" fill="white"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.07L2 22l5.07-1.35A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18.2c-1.62 0-3.13-.44-4.43-1.2l-.32-.19-3.28.87.88-3.2-.21-.33A8.18 8.18 0 013.8 12 8.2 8.2 0 1112 20.2z" fill="white"/></svg>
+  </button>
+  <div class="wa-picker-menu" role="menu">
+    <a role="menuitem" href="https://wa.me/212782875788?text=Bonjour%20%21%20Je%20voudrais%20recevoir%20mon%20aper%C3%A7u%20gratuit%20%F0%9F%99%82" target="_blank" rel="noopener">Aperçu gratuit</a>
+    <a role="menuitem" href="https://wa.me/212782875788?text=Bonjour%20%21%20J%27ai%20une%20question%20sur%20vos%20tarifs." target="_blank" rel="noopener">Question sur les tarifs</a>
+    <a role="menuitem" href="https://wa.me/212782875788?text=Bonjour%20%21%20J%27aimerais%20discuter%20d%27un%20projet%20sur-mesure." target="_blank" rel="noopener">Projet sur-mesure</a>
+  </div>
+</div>
+
+<script src="script.js" defer></script>
+
+</body>
+</html>
