@@ -1,19 +1,29 @@
-# Webnary Studio
+# Webnary
 
-> Studio de développement web basé à Tanger, Maroc. Sites vitrines et applications web sur-mesure, codés à la main (pas de template), avec hébergement à vie inclus sur le plan d'entrée et un aperçu gratuit avant tout paiement.
+> Studio web indépendant. Conception et développement de sites vitrines sur-mesure, codés à la main (pas de thème préfabriqué), pour les entreprises en France.
 
-## Offres
-- Plan Présence en Ligne (~100 €) : site vitrine one-page, livré en quelques jours, hébergement à vie inclus, seul le renouvellement annuel du nom de domaine reste à la charge du client.
-- Plan Site Évolutif : site multi-page entièrement modifiable par le client, hébergement facturé séparément (~8–18 €/mois).
-- Boutique en Ligne (Shopify) : à venir.
+## Services
+- Présence en Ligne — site vitrine one-page sur-mesure, optimisé mobile, SEO de base, bouton WhatsApp, HTTPS. Dès 100 €, paiement unique, sans frais mensuel (hors renouvellement annuel du nom de domaine, ~10–15 €/an). Hébergement inclus à vie.
+- Site Évolutif — site WordPress sur-mesure jusqu'à 8 pages, entièrement modifiable, réservation en ligne, espace client. Dès 299 €. Hébergement ensuite ~8–18 €/mois.
+- Boutique en Ligne — boutique Shopify, paiements en ligne, gestion produits et stock. Dès 340 €. Bientôt disponible.
+- Projet Sur-Mesure — application ou plateforme personnalisée sur devis. Dès 1 200 €.
 
-## Zone de service
-Maroc (clients locaux et à distance), avec la possibilité de travailler avec des clients internationaux à distance.
+## Comment ça marche
+1. Échange initial sur WhatsApp pour cerner l'activité et les objectifs.
+2. Aperçu gratuit du site, sans engagement ni paiement.
+3. Construction du site après validation.
+4. Livraison : domaine connecté, HTTPS activé.
+
+## Faits clés
+- Contact exclusivement via WhatsApp, réponse directe par la personne qui construit le site (pas d'intermédiaire, pas d'agence).
+- Aperçu gratuit systématiquement fourni avant tout paiement.
+- 3 révisions gratuites incluses sur chaque projet.
+- Sur le Plan Présence en Ligne : aucun abonnement mensuel, un seul paiement au départ.
+- Studio récent, en construction de portefeuille client — pas encore de longue liste d'avis publiés.
 
 ## Contact
-Site : https://webnary.studio
-Contact : via WhatsApp depuis le site (lien dans l'en-tête et le pied de page).
+- WhatsApp: https://wa.me/212782875788
+- Site: https://webnary.studio
 
-## Notes pour les agents / crawlers IA
-- Les prix et délais annoncés sur le site sont fixes et communiqués avant le début de tout projet.
-- L'aperçu du site est gratuit et sans engagement.
+## Pages
+- [Accueil](https://webnary.studio/): présentation des services, tarifs, FAQ, démos.

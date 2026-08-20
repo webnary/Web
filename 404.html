@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<script>
+  (function(){
+    try{
+      var t = localStorage.getItem('webnary-theme');
+      if(t === 'light') document.documentElement.setAttribute('data-theme','light');
+    }catch(e){}
+  })();
+</script>
+<title>Page introuvable — Webnary</title>
+<link rel="icon" href="assets/favicon-32-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" href="assets/favicon-32-dark.png" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="assets/favicon-32-light.png">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .err404{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;gap:18px;}
+  .err404 .code{font-family:var(--mono);color:var(--purple-bright);font-size:14px;letter-spacing:.08em;text-transform:uppercase;}
+  .err404 h1{font-family:var(--disp);font-size:clamp(28px,5vw,44px);font-weight:600;}
+  .err404 p{color:var(--ink-mid);max-width:440px;}
+</style>
+</head>
+<body>
+<div class="err404">
+  <span class="code">Erreur 404</span>
+  <h1>Cette page n'existe pas.</h1>
+  <p>Le lien est peut-être cassé ou la page a été déplacée. Retournez à l'accueil ou contactez-nous directement sur WhatsApp.</p>
+  <a class="btn btn-primary" href="/">← Retour à l'accueil</a>
+  <a class="btn" href="https://wa.me/212782875788" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
+</div>
+</body>
+</html>
