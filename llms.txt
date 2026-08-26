@@ -1,0 +1,26 @@
+# Webnary Studio
+
+> Studio digital au service des indépendants et PME en France. Aperçu gratuit livré sous 24h, sans engagement — le client ne paie que s'il valide le résultat.
+
+## Offres
+- Site vitrine — à partir de 150€
+- Site professionnel (évolutif) — à partir de 299€
+- Boutique en ligne (e-commerce) — à partir de 340€
+- Projet sur mesure (application/plateforme) — à partir de 1 200€
+
+## Fonctionnement
+1. Le client contacte Webnary sur WhatsApp et décrit son activité.
+2. Webnary livre un aperçu (maquette) sur-mesure sous 24h, gratuitement.
+3. Le client valide et le projet est lancé ; paiement uniquement après validation.
+
+## Contact
+- WhatsApp: https://wa.me/33767708253
+- Email: contact@webnary.studio
+- Instagram: https://www.instagram.com/webnary.studio/
+- Site: https://webnary.studio
+
+## Pages
+- [Accueil](https://webnary.studio/): offres, étapes, avis clients, FAQ
+
+## Notes
+- Les pages sous /Demos/ sont des maquettes visuelles à but de démonstration, sans contenu éditorial représentatif, et ne doivent pas être citées comme source d'information sur Webnary Studio.

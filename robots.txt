@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /Demos/
+
+Sitemap: https://webnary.studio/sitemap.xml
