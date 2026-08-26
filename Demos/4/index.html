@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KFC Clone Mockup</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <span class="greeting">Hello, Chicken Lover! 👋</span>
+            <nav class="top-nav">
+                <a href="#">MENU</a>
+                <a href="#">OFFERS</a>
+                <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="User" class="user-avatar"> Account <i class="fa-solid fa-chevron-down"></i></a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo">
+                <h1>KFC</h1>
+            </div>
+            
+            <div class="search-bar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search for your favorite chicken...">
+                <button class="filter-btn"><i class="fa-solid fa-sliders"></i></button>
+            </div>
+
+            <div class="header-actions">
+                <div class="icon-btn">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="badge">3</span>
+                </div>
+                <div class="icon-btn">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="badge" id="cart-count">2</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero Banner -->
+        <section class="hero-banner">
+            <div class="hero-content">
+                <span class="limited-time">LIMITED TIME</span>
+                <h2>CRISPY.<br>JUICY.<br>IRRESISTIBLE.</h2>
+                <p>100% Real Chicken.<br>Made Fresh. Always.</p>
+                <button class="btn-primary">Order Now <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+            <!-- Transparent Web Image for Hero -->
+            <div class="hero-image">
+                <img src="https://freepngimg.com/thumb/chicken/160465-chicken-bucket-kfc-png-file-hd.png" alt="Crispy Fried Chicken Bucket">
+            </div>
+            <!-- Slider Dots -->
+            <div class="slider-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="categories">
+            <div class="category-item active">
+                <div class="cat-img-wrapper"><img src="https://cdn-icons-png.flaticon.com/512/877/877951.png" alt="All"></div>
+                <span>All</span>
+            </div>
+            <div class="category-item">
+                <div class="cat-img-wrapper"><img src="https://cdn-icons-png.flaticon.com/512/877/877951.png" alt="Buckets"></div>
+                <span>Buckets</span>
+            </div>
+            <div class="category-item">
+                <div class="cat-img-wrapper"><img src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png" alt="Burgers"></div>
+                <span>Burgers</span>
+            </div>
+            <div class="category-item">
+                <div class="cat-img-wrapper"><img src="https://cdn-icons-png.flaticon.com/512/1046/1046786.png" alt="Snacks"></div>
+                <span>Snacks</span>
+            </div>
+            <div class="category-item">
+                <div class="cat-img-wrapper"><img src="https://cdn-icons-png.flaticon.com/512/2819/2819194.png" alt="Sides"></div>
+                <span>Sides</span>
+            </div>
+            <div class="category-item">
+                <div class="cat-img-wrapper"><img src="https://cdn-icons-png.flaticon.com/512/2405/2405479.png" alt="Drinks"></div>
+                <span>Drinks</span>
+            </div>
+            <div class="category-item">
+                <div class="cat-img-wrapper"><img src="https://cdn-icons-png.flaticon.com/512/3014/3014502.png" alt="Desserts"></div>
+                <span>Desserts</span>
+            </div>
+        </section>
+
+        <!-- Popular Combos -->
+        <section class="popular-combos">
+            <div class="section-header">
+                <h3>POPULAR COMBOS</h3>
+                <a href="#" class="view-all">View All <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="product-grid">
+                <!-- Product Card 1 -->
+                <div class="product-card">
+                    <span class="tag tag-red">BESTSELLER</span>
+                    <button class="heart-btn"><i class="fa-regular fa-heart"></i></button>
+                    <!-- Transparent Bucket PNG -->
+                    <img src="https://freepngimg.com/thumb/chicken/160465-chicken-bucket-kfc-png-file-hd.png" alt="Chicken Bucket" class="product-img">
+                    <h4>8 Pcs Chicken Bucket</h4>
+                    <p class="desc">2 Large Fries + 2 Dips + 2 Drinks</p>
+                    <div class="rating"><i class="fa-solid fa-star"></i> 4.8 (12.5K+)</div>
+                    <div class="card-footer">
+                        <span class="price">$24.99</span>
+                        <button class="add-btn"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="product-card">
+                    <span class="tag tag-orange">POPULAR</span>
+                    <button class="heart-btn"><i class="fa-regular fa-heart"></i></button>
+                    <!-- Transparent Burger PNG -->
+                    <img src="https://freepngimg.com/thumb/chicken/160465-chicken-bucket-kfc-png-file-hd.png" alt="Zinger Burger" class="product-img">
+                    <h4>Zinger Burger Combo</h4>
+                    <p class="desc">Zinger Burger + Fries + Drink</p>
+                    <div class="rating"><i class="fa-solid fa-star"></i> 4.7 (8.7K+)</div>
+                    <div class="card-footer">
+                        <span class="price">$9.99</span>
+                        <button class="add-btn"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="product-card">
+                    <span class="tag tag-red">SAVE 15%</span>
+                    <button class="heart-btn"><i class="fa-regular fa-heart"></i></button>
+                    <!-- Transparent Fried Chicken PNG -->
+                    <img src="https://freepngimg.com/thumb/chicken/160465-chicken-bucket-kfc-png-file-hd.png" alt="Hot & Crispy" class="product-img">
+                    <h4>5 Pcs Hot & Crispy</h4>
+                    <p class="desc">5 Pcs Chicken + Fries + Drink</p>
+                    <div class="rating"><i class="fa-solid fa-star"></i> 4.6 (6.3K+)</div>
+                    <div class="card-footer">
+                        <span class="price">$15.99</span>
+                        <button class="add-btn"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Promo Banner -->
+        <section class="promo-banner">
+            <div class="promo-content">
+                <span class="exclusive">EXCLUSIVE OFFER</span>
+                <h3>Up to 30% OFF</h3>
+                <p>On selected combos</p>
+                <button class="btn-primary">Order Now <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+            <!-- Transparent Burger PNG for Promo -->
+            <img src="https://freepngimg.com/thumb/burger/7-2-burger-png-picture.png" alt="Promo Burger" class="promo-image">
+            <div class="promo-badge">
+                <span>30%</span>
+                <small>OFF</small>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col">
+                <a href="#">Menu</a>
+                <a href="#">Deals</a>
+                <a href="#">Find a KFC</a>
+                <a href="#">Careers</a>
+                <a href="#">Contact Us</a>
+            </div>
+            <div class="footer-col">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Legal</a>
+                <a href="#">Feedback</a>
+            </div>
+            <div class="footer-col app-nav">
+                <a href="#"><i class="fa-solid fa-house"></i> HOME</a>
+                <a href="#"><i class="fa-solid fa-bars"></i> MENU</a>
+                <a href="#"><i class="fa-solid fa-bag-shopping"></i> ORDERS</a>
+                <a href="#"><i class="fa-solid fa-tag"></i> OFFERS</a>
+                <a href="#"><i class="fa-regular fa-user"></i> PROFILE</a>
+            </div>
+            <div class="footer-col right-align">
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+                <p class="copyright">© 2026 Kentucky Fried Chicken<br>International. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

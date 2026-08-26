@@ -1,0 +1,99 @@
+/* ==================== LIGHTBOX NAV (Prev / Next) ==================== */
+
+/* Base nav button */
+.lightbox-nav {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 52px;
+    height: 52px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2100;
+    transition: background 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
+    color: white;
+}
+
+.lightbox-nav svg {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+}
+
+.lightbox-prev { left: 1.5rem; }
+.lightbox-next { right: 1.5rem; }
+
+.lightbox-nav:hover {
+    background: var(--dusty-rose, #C9A79A);
+    border-color: var(--dusty-rose, #C9A79A);
+    transform: translateY(-50%) scale(1.08);
+}
+
+.lightbox-nav:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.lightbox-nav:focus-visible {
+    outline: 3px solid var(--dusty-rose, #C9A79A);
+    outline-offset: 3px;
+}
+
+/* Counter: "3 / 9" */
+.lightbox-counter {
+    display: block;
+    font-family: var(--font-body, 'Lato', sans-serif);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: rgba(255, 255, 255, 0.45);
+    margin-top: 0.35rem;
+}
+
+/* Smooth image transition */
+#lightboxImage {
+    transition: opacity 0.3s ease;
+}
+
+/* ── Mobile ── */
+@media (max-width: 640px) {
+    .lightbox-nav {
+        width: 42px;
+        height: 42px;
+        top: auto;
+        bottom: 5.5rem; /* sit above the info panel */
+        transform: none;
+    }
+
+    .lightbox-nav:hover {
+        transform: scale(1.08);
+    }
+
+    .lightbox-nav:active {
+        transform: scale(0.95);
+    }
+
+    .lightbox-prev { left: 1rem;  }
+    .lightbox-next { right: 1rem; }
+
+    .lightbox-nav svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+    .lightbox-nav {
+        transition: none;
+    }
+    #lightboxImage {
+        transition: none;
+    }
+}

@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sara Benali — Professional photographer specializing in weddings, portraits, and events in Casablanca, Morocco. Capturing genuine emotion with elegance and artistry.">
+    <meta property="og:title"       content="Sara Benali Photography">
+    <meta property="og:description" content="Luxury wedding and portrait photographer based in Casablanca, Morocco.">
+    <meta property="og:image"       content="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1200&h=630&fit=crop">
+    <meta property="og:type"        content="website">
+    <title>Sara Benali Photography | Wedding & Portrait Photographer — Casablanca</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9A79A' stroke-width='2'><path d='M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z'/><circle cx='12' cy='13' r='4'/></svg>">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/services-modern.css">
+    <link rel="stylesheet" href="css/portfolio-modern.css">
+    <link rel="stylesheet" href="css/contact-modern.css">
+    <link rel="stylesheet" href="css/lightbox-nav.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-background" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar" aria-label="Main navigation">
+        <a href="#hero" class="nav-logo" data-config="photographer.name">Sara Benali</a>
+
+        <ul class="nav-links" role="list">
+            <li><a href="#portfolio"    class="nav-link">Portfolio</a></li>
+            <li><a href="#about"        class="nav-link">About</a></li>
+            <li><a href="#services"     class="nav-link">Services</a></li>
+            <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+        </ul>
+
+        <a href="#contact" class="nav-cta" aria-label="Book a photography session">Book a Session</a>
+
+        <button class="hamburger" id="hamburger"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="mobileNav">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav" id="mobileNav"
+         role="dialog" aria-label="Navigation menu" aria-modal="true">
+        <a href="#portfolio"    class="mobile-link">Portfolio</a>
+        <a href="#about"        class="mobile-link">About</a>
+        <a href="#services"     class="mobile-link">Services</a>
+        <a href="#testimonials" class="mobile-link">Testimonials</a>
+        <a href="#contact"      class="mobile-link" style="color: var(--dusty-rose);">Book a Session</a>
+    </div>
+
+    <!-- ==================== HERO ==================== -->
+    <section id="hero" aria-label="Hero — Sara Benali Photography">
+        <!-- Background image is set at runtime by renderFromConfig() -->
+        <div class="hero-bg" id="heroBg"
+             role="img" aria-label="Wedding photography background"></div>
+        <div class="hero-overlay" aria-hidden="true"></div>
+
+        <div class="hero-content">
+            <p  class="hero-eyebrow" data-config="hero.eyebrow"></p>
+            <h1 class="hero-title">
+                <span data-config="hero.titleLine1"></span><br>
+                <em data-config="hero.titleLine2"></em>
+            </h1>
+            <p class="hero-tagline" data-config="hero.tagline"></p>
+            <div class="hero-btns">
+                <a href="#contact"   class="btn-primary" data-config="hero.ctaPrimary"></a>
+                <a href="#portfolio" class="btn-ghost"   data-config="hero.ctaSecondary"></a>
+            </div>
+        </div>
+
+        <div class="scroll-hint" aria-hidden="true">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ==================== ABOUT ==================== -->
+    <section id="about" class="section" aria-labelledby="about-heading">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Get to Know Me</span>
+                <h2 class="section-title" id="about-heading">About Me</h2>
+            </div>
+            <div class="about-content">
+
+                <div class="about-image">
+                    <div class="image-frame">
+                        <!-- Image populated by renderAboutImage() -->
+                        <img alt="Sara Benali, professional photographer" loading="lazy">
+                        <div class="image-overlay" aria-hidden="true"></div>
+                    </div>
+                    <div class="experience-badge" aria-label="8 or more years of experience">
+                        <span class="badge-number" aria-hidden="true"
+                              data-config="photographer.yearsExp"></span>
+                        <span class="badge-text">Years of Experience</span>
+                    </div>
+                </div>
+
+                <div class="about-text">
+                    <h3 class="about-greeting">Hello, I'm <span data-config="photographer.name"></span></h3>
+                    <p data-config="photographer.bio1"></p>
+                    <p data-config="photographer.bio2"></p>
+                    <p data-config="photographer.bio3"></p>
+
+                    <div class="about-stats" role="list" aria-label="Photography statistics">
+                        <div class="stat-item" role="listitem">
+                            <span class="stat-number" data-config="photographer.stats.weddings"></span>
+                            <span class="stat-label">Weddings</span>
+                        </div>
+                        <div class="stat-item" role="listitem">
+                            <span class="stat-number" data-config="photographer.stats.portraits"></span>
+                            <span class="stat-label">Portrait Sessions</span>
+                        </div>
+                        <div class="stat-item" role="listitem">
+                            <span class="stat-number" data-config="photographer.stats.events"></span>
+                            <span class="stat-label">Corporate Events</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SERVICES ==================== -->
+    <section id="services" class="section svc-section" aria-labelledby="services-heading">
+        <div class="svc-inner">
+            <div class="svc-label-col" aria-hidden="true">
+                <span class="svc-vertical-label">What I Offer</span>
+            </div>
+            <div class="svc-content-col">
+                <div class="svc-header">
+                    <h2 class="svc-title" id="services-heading">Services<em>.</em></h2>
+                    <p class="svc-intro">
+                        Every session is tailored to your story —<br>
+                        choose a service or let's build something custom.
+                    </p>
+                </div>
+                <!-- DYNAMIC — filled by renderServices() -->
+                <div class="svc-list" role="list"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PORTFOLIO ==================== -->
+    <section id="portfolio" class="section port-section" aria-labelledby="portfolio-heading">
+        <div class="container">
+
+            <!-- Header -->
+            <div class="port-header">
+                <div class="port-header-left">
+                    <span class="port-eyebrow">Selected Work</span>
+                    <h2 class="port-title" id="portfolio-heading">My Work<em>.</em></h2>
+                </div>
+                <div class="port-header-right">
+                    <!-- Filter tabs -->
+                    <div class="port-filters" role="group" aria-label="Filter portfolio by category">
+                        <button class="port-filter active" data-filter="all" aria-pressed="true">
+                            <span>All</span>
+                        </button>
+                        <button class="port-filter" data-filter="wedding" aria-pressed="false">
+                            <span>Weddings</span>
+                        </button>
+                        <button class="port-filter" data-filter="portrait" aria-pressed="false">
+                            <span>Portraits</span>
+                        </button>
+                        <button class="port-filter" data-filter="event" aria-pressed="false">
+                            <span>Events</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Masonry Grid — DYNAMIC — filled by renderPortfolio() -->
+            <div class="port-grid" id="portfolioGrid" role="list"></div>
+
+            <!-- CTA row -->
+            <div class="port-footer">
+                <p class="port-footer-text">Curious to see more?</p>
+                <a href="https://instagram.com/sarabenali.photo" target="_blank" rel="noopener noreferrer" class="port-ig-link">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                    View full gallery on Instagram
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14" aria-hidden="true">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==================== LIGHTBOX ==================== -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Portfolio image viewer">
+
+        <!-- Close -->
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close image viewer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+        </button>
+
+        <!-- Prev -->
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M15 18l-6-6 6-6"/>
+            </svg>
+        </button>
+
+        <!-- Image + info -->
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightboxImage">
+            <div class="lightbox-info">
+                <span class="lightbox-category"></span>
+                <h4 class="lightbox-title"></h4>
+                <span class="lightbox-counter" id="lightboxCounter"></span>
+            </div>
+        </div>
+
+        <!-- Next -->
+        <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M9 18l6-6-6-6"/>
+            </svg>
+        </button>
+
+    </div>
+
+    <!-- ==================== TESTIMONIALS ==================== -->
+    <section id="testimonials" class="section section-dark" aria-labelledby="testimonials-heading">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Client Stories</span>
+                <h2 class="section-title" id="testimonials-heading">What Clients Say</h2>
+            </div>
+            <!-- DYNAMIC — filled by renderTestimonials() -->
+            <div class="testimonials-grid"></div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <section id="contact" class="section ctc-section" aria-labelledby="contact-heading">
+        <div class="ctc-inner">
+
+            <!-- ── LEFT: Dark info panel ── -->
+            <div class="ctc-left">
+
+                <!-- Vertical side label -->
+                <span class="ctc-vertical-label" aria-hidden="true">Let's Work Together</span>
+
+                <!-- Headline -->
+                <div class="ctc-headline">
+                    <span class="ctc-eyebrow">Get In Touch</span>
+                    <h2 class="ctc-title" id="contact-heading">
+                        Let's make<br>
+                        something<br>
+                        <em>beautiful.</em>
+                    </h2>
+                </div>
+
+                <!-- Contact links — DYNAMIC — filled by renderContactLinks() -->
+                <div class="ctc-links" role="list"></div>
+
+                <!-- Availability -->
+                <div class="ctc-availability" role="status">
+                    <span class="ctc-avail-dot" aria-hidden="true"></span>
+                    <span data-config="contact.availability"></span>
+                </div>
+
+                <!-- Large decorative letter -->
+                <span class="ctc-deco" aria-hidden="true">S</span>
+
+            </div>
+
+            <!-- ── RIGHT: Form panel ── -->
+            <div class="ctc-right">
+
+                <div class="ctc-form-header">
+                    <p class="ctc-form-intro" data-config="contact.formIntro"></p>
+                </div>
+
+                <form class="ctc-form" id="contactForm" method="POST" novalidate>
+
+                    <!-- Row 1: Name + Email -->
+                    <div class="ctc-form-row">
+                        <div class="ctc-field">
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                required
+                                autocomplete="name"
+                                placeholder=" ">
+                            <label for="name">Your Name <span aria-hidden="true">*</span></label>
+                            <span class="ctc-field-line" aria-hidden="true"></span>
+                        </div>
+
+                        <div class="ctc-field">
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                required
+                                autocomplete="email"
+                                placeholder=" ">
+                            <label for="email">Email Address <span aria-hidden="true">*</span></label>
+                            <span class="ctc-field-line" aria-hidden="true"></span>
+                        </div>
+                    </div>
+
+                    <!-- Row 2: Date + Type -->
+                    <div class="ctc-form-row">
+                        <div class="ctc-field">
+                            <input
+                                type="date"
+                                id="eventDate"
+                                name="eventDate"
+                                autocomplete="off"
+                                placeholder=" ">
+                            <label for="eventDate">Event Date</label>
+                            <span class="ctc-field-line" aria-hidden="true"></span>
+                        </div>
+
+                        <div class="ctc-field ctc-field--select">
+                            <select id="eventType" name="eventType">
+                                <option value="" disabled selected></option>
+                                <option value="wedding">Wedding</option>
+                                <option value="portrait">Portrait Session</option>
+                                <option value="event">Corporate Event</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <label for="eventType">Event Type</label>
+                            <span class="ctc-field-line" aria-hidden="true"></span>
+                            <svg class="ctc-select-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Message -->
+                    <div class="ctc-field ctc-field--textarea">
+                        <textarea
+                            id="message"
+                            name="message"
+                            required
+                            rows="4"
+                            placeholder=" "></textarea>
+                        <label for="message">Your Message <span aria-hidden="true">*</span></label>
+                        <span class="ctc-field-line" aria-hidden="true"></span>
+                    </div>
+
+                    <!-- Submit bar -->
+                    <button type="submit" class="ctc-submit" aria-label="Send your message to Sara">
+                        <span class="ctc-submit-text">Send Message</span>
+                        <span class="ctc-submit-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                            </svg>
+                        </span>
+                        <span class="ctc-submit-fill" aria-hidden="true"></span>
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer" aria-label="Site footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="logo-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/>
+                            </svg>
+                        </span>
+                        <span class="logo-text" data-config="photographer.name"></span>
+                    </div>
+                    <p data-config="footer.tagline"></p>
+                    <div class="footer-social" aria-label="Social media links">
+                        <a href="https://instagram.com/sarabenali.photo" target="_blank" rel="noopener noreferrer" aria-label="Follow Sara on Instagram">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="https://facebook.com/sarabenaliphoto" target="_blank" rel="noopener noreferrer" aria-label="Follow Sara on Facebook">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="mailto:sara.benali@example.com" aria-label="Email Sara">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Quick Links</h4>
+                        <nav aria-label="Quick links">
+                            <a href="#hero">Home</a>
+                            <a href="#about">About</a>
+                            <a href="#services">Services</a>
+                            <a href="#portfolio">Portfolio</a>
+                        </nav>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Services</h4>
+                        <nav aria-label="Services">
+                            <a href="#services">Weddings</a>
+                            <a href="#services">Portraits</a>
+                            <a href="#services">Events</a>
+                            <a href="#contact">Book Session</a>
+                        </nav>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Contact</h4>
+                        <nav aria-label="Contact links">
+                            <a href="mailto:sara.benali@example.com">Email</a>
+                            <a href="https://wa.me/212600000000" data-wa-link>WhatsApp</a>
+                            <a href="#testimonials">Testimonials</a>
+                            <a href="#contact">Get in Touch</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p data-config="footer.copyright"></p>
+                <p class="made-with" data-config="footer.madeWith"></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== WHATSAPP FLOATING BUTTON ==================== -->
+    <style>
+    .wa-float {
+        position: fixed;
+        bottom: 32px;
+        right: 32px;
+        z-index: 1500;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: wa-enter 0.5s ease 1.8s forwards;
+    }
+
+    @keyframes wa-enter {
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .wa-tooltip {
+        background: #1a1a1a;
+        color: #fff;
+        font-family: var(--font-body, 'Lato', sans-serif);
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        white-space: nowrap;
+        pointer-events: none;
+        opacity: 0;
+        transform: translateX(8px);
+        transition: opacity 0.25s ease, transform 0.25s ease;
+        position: relative;
+    }
+
+    .wa-tooltip::after {
+        content: '';
+        position: absolute;
+        right: -6px;
+        top: 50%;
+        transform: translateY(-50%);
+        border-width: 5px 0 5px 7px;
+        border-style: solid;
+        border-color: transparent transparent transparent #1a1a1a;
+    }
+
+    .wa-float:hover .wa-tooltip,
+    .wa-float:focus-within .wa-tooltip {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .wa-btn {
+        position: relative;
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        background: #25D366;
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45), 0 2px 8px rgba(0, 0, 0, 0.15);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        flex-shrink: 0;
+        transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    }
+
+    .wa-btn:hover,
+    .wa-btn:focus-visible {
+        background: #1ebe5d;
+        transform: scale(1.08) translateY(-2px);
+        box-shadow: 0 8px 28px rgba(37, 211, 102, 0.55), 0 4px 12px rgba(0, 0, 0, 0.18);
+    }
+
+    .wa-btn:active {
+        transform: scale(0.96);
+    }
+
+    .wa-btn:focus-visible {
+        outline: 3px solid #25D366;
+        outline-offset: 3px;
+    }
+
+    .wa-icon {
+        width: 30px;
+        height: 30px;
+        fill: #ffffff;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 1;
+    }
+
+    .wa-btn::before,
+    .wa-btn::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        background: rgba(37, 211, 102, 0.35);
+        animation: wa-pulse 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        pointer-events: none;
+    }
+
+    .wa-btn::after {
+        background: rgba(37, 211, 102, 0.2);
+        animation-delay: 0.8s;
+    }
+
+    .wa-btn:hover::before,
+    .wa-btn:hover::after {
+        animation-play-state: paused;
+    }
+
+    @keyframes wa-pulse {
+        0%   { transform: scale(1);   opacity: 1; }
+        70%  { transform: scale(1.75); opacity: 0; }
+        100% { transform: scale(1.75); opacity: 0; }
+    }
+
+    @media (max-width: 480px) {
+        .wa-float {
+            bottom: 20px;
+            right: 20px;
+        }
+        .wa-btn {
+            width: 52px;
+            height: 52px;
+        }
+        .wa-icon {
+            width: 26px;
+            height: 26px;
+        }
+        .wa-tooltip {
+            display: none;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .wa-btn::before,
+        .wa-btn::after {
+            animation: none;
+        }
+        .wa-float {
+            animation: none;
+            opacity: 1;
+            transform: none;
+        }
+    }
+    </style>
+
+    <div class="wa-float" role="complementary" aria-label="WhatsApp contact">
+        <div class="wa-tooltip" aria-hidden="true">Chat on WhatsApp</div>
+        <a href="#" data-wa-link class="wa-btn" target="_blank" rel="noopener noreferrer"
+           aria-label="Contact Sara on WhatsApp — opens in a new tab"
+           title="Chat on WhatsApp">
+            <svg class="wa-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>

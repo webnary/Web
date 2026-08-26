@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Webnary Studio — Un site qui vend</title>
+<meta name="description" content="Studio web pour indépendants et PME en France. Aperçu gratuit sous 24h, sans engagement.">
+<link rel="canonical" href="https://webnary.studio/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Webnary Studio — Un site qui vend">
+<meta property="og:description" content="Studio web pour indépendants et PME en France. Aperçu gratuit sous 24h, sans engagement.">
+<meta property="og:image" content="https://webnary.studio/assets/OG.jpg">
+<meta property="og:url" content="https://webnary.studio/">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Webnary",
+  "url": "https://webnary.studio",
+  "areaServed": {"@type": "Country", "name": "France"},
+  "telephone": "+212782875788",
+  "priceRange": "150€-1200€"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Combien de temps pour recevoir mon aperçu ?","acceptedAnswer":{"@type":"Answer","text":"24h. Sans engagement, sans carte bancaire — juste ton activité et quelques infos sur WhatsApp."}},
+    {"@type":"Question","name":"Le premier aperçu est-il vraiment gratuit ?","acceptedAnswer":{"@type":"Answer","text":"Oui, entièrement. Tu ne payes que si tu valides le résultat."}},
+    {"@type":"Question","name":"Je n'ai pas encore de contenu ou de photos, c'est grave ?","acceptedAnswer":{"@type":"Answer","text":"Non. On démarre avec des placeholders et on les remplace dès que tu es prêt(e)."}},
+    {"@type":"Question","name":"L'hébergement est-il compris ?","acceptedAnswer":{"@type":"Answer","text":"Ça dépend du type de projet. Le coût exact de l'hébergement, du domaine et des éventuels services supplémentaires est précisé avant le lancement."}},
+    {"@type":"Question","name":"Puis-je modifier mon site moi-même après ?","acceptedAnswer":{"@type":"Answer","text":"Oui, selon la solution choisie. Les sites avec CMS permettent de modifier facilement les contenus vous-même, et nous pouvons également nous en occuper pour vous."}}
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N6NECZ186Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-N6NECZ186Y');
+</script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1977595522817021');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1977595522817021&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "y72hvm79s1");
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,800&display=swap" rel="stylesheet">
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="nav">  
+    <a href="#" class="brand-logo">
+  <img src="assets/logo.png" alt="Webnary Studio logo">
+  <span>Webnary</span>
+</a>
+
+    <button type="button" class="nav-toggle" id="navToggle" aria-haspopup="true" aria-expanded="false" aria-controls="navLinks" aria-label="Ouvrir le menu">
+      <i data-lucide="menu" aria-hidden="true"></i>
+    </button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#offres">Offres</a>
+      <a href="#etapes">Étapes</a>
+      <a href="#apercus">Aperçus</a>
+      <a href="#avis">Avis</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+<div class="wa-picker" >
+        <button type="button" class="btn btn-primary btn-sm wa-picker-trigger" aria-haspopup="true" aria-expanded="false">
+          WhatsApp
+        </button>
+        <div class="wa-picker-menu" role="menu">
+          <a role="menuitem" href="https://wa.me/212782875788?text=Bonjour%20%21%20Je%20souhaite%20recevoir%20mon%20aper%C3%A7u%20gratuit." target="_blank" rel="noopener">Aperçu gratuit</a>
+          <a role="menuitem" href="https://wa.me/212782875788?text=Bonjour%20%21%20J%27ai%20une%20question%20sur%20vos%20tarifs." target="_blank" rel="noopener">Question sur les tarifs</a>
+          <a role="menuitem" href="https://wa.me/212782875788?text=Bonjour%20%21%20J%27aimerais%20discuter%20d%27un%20projet%20sur-mesure." target="_blank" rel="noopener">Projet sur-mesure</a>
+        </div>
+      </div>
+  </div>
+</header>
+
+<!-- AJOUT DU WRAPPER ICI -->
+<div class="main-wrapper">
+
+<section class="hero-centered">
+
+  <!-- Flanking bg: the studio's own </> mark, not a competitor motif -->
+  <span class="hero-bracket hero-bracket-left" aria-hidden="true">&lt;</span>
+  <span class="hero-bracket hero-bracket-right" aria-hidden="true">/&gt;</span>
+
+  <div class="hero-content reveal">
+
+    <!-- Trust line: back above the headline, plain (no avatar, no badge stack) -->
+    <a class="hero-trust-line" href="#avis" style="text-decoration:none;">
+      <span class="trust-stars">★★★★★</span>
+      <span class="trust-label">La confiance de nos clients</span>
+    </a>
+
+    <!-- Headline (copy unchanged) -->
+    <h1>Création de sites web <span class="highlight">premium</span><br>pour les entreprises</h1>
+
+    <!-- Subheadline (copy unchanged) -->
+    <p class="lead">De la strategy et design UI/UX au développement et lancement, Webnary Studio livre des sites qui combinent esthétique haut de gamme et réels résultats commerciaux.</p>
+
+    <!-- Buttons (copy unchanged) -->
+    <div class="hero-cta-row centered">
+      <div class="wa-picker">
+        <button type="button" class="btn btn-primary wa-picker-trigger" aria-haspopup="true" aria-expanded="false">Demander un aperçu</button>
+        <div class="wa-picker-menu" role="menu">
+          <a role="menuitem" href="https://wa.me/212782875788?text=Bonjour%20%21%20Je%20souhaite%20recevoir%20mon%20aper%C3%A7u%20gratuit." target="_blank" rel="noopener">Aperçu gratuit</a>
+          <a role="menuitem" href="https://wa.me/212782875788?text=Bonjour%20%21%20J%27ai%20une%20question%20sur%20vos%20tarifs." target="_blank" rel="noopener">Question sur les tarifs</a>
+          <a role="menuitem" href="https://wa.me/212782875788?text=Bonjour%20%21%20J%27aimerais%20discuter%20d%27un%20projet%20sur-mesure." target="_blank" rel="noopener">Projet sur-mesure</a>
+        </div>
+      </div>
+      <a class="btn btn-outline" href="#apercus">View Live Demos</a>
+    </div>
+
+
+   <!-- Tech Stack: Scrolling Marquee -->
+    <div class="hero-stack-marquee">
+      <div class="tech-stack" role="list" aria-label="Technologies we build with">
+  <img src="assets/logos/shopify_monotone_black.svg" alt="Shopify" height="28">
+  <img src="assets/logos/GitHub_Lockup_Black_Clearspace.svg" alt="GitHub" height="28">
+    <img src="assets/logos/WordPress-logotype-standard.png" alt="WordPress" height="28">
+<img 
+  src="assets/logos/vercel-logotype-light.svg" 
+  alt="Vercel"
+  height="28"
+  style="opacity: 0.87; width: 120px;"
+></div>    </div>
+
+  </div>
+</section>
+<!-- ===================================== -->
+<!-- NOUVELLE SECTION ÉTAPES (PIN CARDS)   -->
+<!-- ===================================== -->
+<section class="section" id="etapes">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <h2>De l'idée au site, en 3 étapes.</h2>
+    </div>
+    
+    <div class="steps-timeline">
+      
+      <!-- Étape 1 -->
+      <div class="pin-card-wrapper reveal">
+        <div class="pin pin-blue"></div>
+        <div class="pin-card-inner" style="background-color: var(--sky-light);">
+          <span class="pin-number" style="color: var(--indigo);">01</span>
+          <h3>Tu m'écris sur WhatsApp</h3>
+          <p>Deux minutes suffisent : parle-moi de ton activité, de ton style, et de tes envies pour le site.</p>
+        </div>
+      </div>
+
+      <!-- Étape 2 -->
+      <div class="pin-card-wrapper reveal">
+        <div class="pin pin-green"></div>
+        <div class="pin-card-inner" style="background-color: var(--mint-light);">
+          <span class="pin-number" style="color: #1e875b;">02</span>
+          <h3>Je te livre un aperçu</h3>
+          <p>Une vraie maquette de <strong>ton</strong> site, sur-mesure et prête sous 24h. Zéro engagement de ta part.</p>
+        </div>
+      </div>
+
+      <!-- Étape 3 -->
+      <div class="pin-card-wrapper reveal">
+        <div class="pin pin-orange"></div>
+        <div class="pin-card-inner" style="background-color: var(--amber-light);">
+          <span class="pin-number" style="color: #d37c00;">03</span>
+          <h3>Tu valides, on lance</h3>
+          <p>On peaufine les détails ensemble, et tu ne payes que si le résultat te convainc à 100%.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="apercus" style="background: var(--bg); overflow: hidden; position: relative;">
+  <div class="wrap">
+    <!-- J'ai retiré les styles en ligne (fond sombre) pour garder le design propre et clair -->
+    <div class="section-head center reveal">
+      <h2>Nous Demos</h2>
+    </div>
+  </div>
+
+  <div class="carousel-container reveal">
+    <div class="carousel-track">
+      
+      <!-- Carte 0 (Tout à gauche) -->
+      <div class="carousel-card card-pos-0">
+        <a href="Demos/1/index.html" class="carousel-card-link" aria-label="Voir la démo 1">
+          <img src="images/portfolio-1.jpg" alt="Montagne">
+        </a>
+      </div>
+
+      <!-- Carte 1 (Gauche) -->
+      <div class="carousel-card card-pos-1">
+        <a href="Demos/3/index.html" class="carousel-card-link" aria-label="Voir la démo 3">
+          <img src="images/portfolio-3.jpg" alt="Avion">
+        </a>
+      </div>
+
+      <!-- Carte 2 (Centre Actif) -->
+      <div class="carousel-card card-pos-2">
+        <a href="Demos/2/index.html" class="carousel-card-link" aria-label="Voir la démo 2">
+          <img src="images/portfolio-2.jpg" alt="Lac et quai">
+        </a>
+      </div>
+
+      <!-- Carte 3 (Droite) -->
+      <div class="carousel-card card-pos-3">
+        <a href="Demos/4/index.html" class="carousel-card-link" aria-label="Voir la démo 4">
+          <img src="images/portfolio-4.jpg" alt="Appareil photo">
+        </a>
+      </div>
+
+      <!-- Carte 4 (Tout à droite) -->
+      <div class="carousel-card card-pos-4">
+        <a href="Demos/5/index.html" class="carousel-card-link" aria-label="Voir la démo 5">
+          <img src="images/portfolio-5.jpg" alt="Randonneur">
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Le bouton "Expand" de la maquette -->
+    <div class="expand-btn">
+      <i data-lucide="maximize-2"></i>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="avis">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow-chip">Avis clients</span>
+      <h2>Nos premiers clients, dans leurs mots.</h2>
+    </div>
+    <div class="testi-grid reveal">
+      <div class="testi-card">
+        <span class="testi-mark">"</span>
+        <p class="testi-quote">Franchement, très bonne expérience avec Webnary Studio. L'équipe a été super réactive et surtout à l'écoute de ce que je voulais. Le résultat est vraiment propre, je suis content du travail réalisé. Merci à toute l'équipe !</p>
+        <div class="testi-person">
+          <div class="testi-avatar">NB</div>
+          <div class="testi-name">Nicolas Bernard</div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <span class="testi-mark">"</span>
+        <p class="testi-quote">Au début, j'avais quelques idées en tête mais je ne savais pas vraiment comment les mettre en place. Webnary Studio a bien compris ce que je voulais et le résultat final est vraiment top. Le site est propre, moderne et fonctionne très bien. Merci à l'équipe pour le travail !</p>
+        <div class="testi-person">
+          <div class="testi-avatar">ML</div>
+          <div class="testi-name">Michel Leroy</div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <span class="testi-mark">"</span>
+        <p class="testi-quote">Très content du résultat. L'équipe de Webnary Studio a été sérieuse du début à la fin et le site correspond vraiment à ce que je recherchais. Bonne communication, travail propre et surtout un rendu qui fait vraiment professionnel. Je recommande !</p>
+        <div class="testi-person">
+          <div class="testi-avatar">LS</div>
+          <div class="testi-name">Lucas Simon</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section pricing-section" id="offres">
+  <div class="wrap">
+
+    <div class="section-head center reveal">
+      <h2>Des projets à partir de 150€.</h2>
+      <p class="pricing-intro">
+        Un prix clair pour commencer. Le tarif exact dépend de vos besoins
+        et vous est confirmé après l’aperçu gratuit.
+      </p>
+    </div>
+
+    <div class="pricing-box reveal">
+
+      <div class="pricing-list">
+
+        <div class="pricing-row">
+          <div class="pricing-type">
+            <div class="pricing-icon">
+              <i data-lucide="globe"></i>
+            </div>
+            <div>
+              <strong>Site vitrine</strong>
+              <span>Présence en ligne essentielle</span>
+            </div>
+          </div>
+          <div class="pricing-price">
+            <span>À partir de</span>
+            <strong>150€</strong>
+          </div>
+        </div>
+
+        <div class="pricing-row">
+          <div class="pricing-type">
+            <div class="pricing-icon">
+              <i data-lucide="layout-dashboard"></i>
+            </div>
+            <div>
+              <strong>Site professionnel</strong>
+              <span>Site évolutif avec fonctionnalités supplémentaires</span>
+            </div>
+          </div>
+          <div class="pricing-price">
+            <span>À partir de</span>
+            <strong>299€</strong>
+          </div>
+        </div>
+
+        <div class="pricing-row">
+          <div class="pricing-type">
+            <div class="pricing-icon">
+              <i data-lucide="shopping-bag"></i>
+            </div>
+            <div>
+              <strong>Boutique en ligne</strong>
+              <span>Solution e-commerce adaptée à votre activité</span>
+            </div>
+          </div>
+          <div class="pricing-price">
+            <span>À partir de</span>
+            <strong>340€</strong>
+          </div>
+        </div>
+
+        <div class="pricing-row">
+          <div class="pricing-type">
+            <div class="pricing-icon">
+              <i data-lucide="code-2"></i>
+            </div>
+            <div>
+              <strong>Projet sur mesure</strong>
+              <span>Application, plateforme ou fonctionnalités spécifiques</span>
+            </div>
+          </div>
+          <div class="pricing-price">
+            <span>À partir de</span>
+            <strong>1 200€</strong>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pricing-bottom">
+
+        <div class="pricing-note">
+          <i data-lucide="info"></i>
+          <span>
+            Le prix final dépend du projet. Vous recevez d’abord un aperçu
+            gratuit sous 24h, sans engagement.
+          </span>
+        </div>
+
+        <div class="wa-picker">
+          <button type="button" class="btn btn-primary wa-picker-trigger" aria-haspopup="true" aria-expanded="false">
+            Recevoir mon aperçu gratuit
+            <i data-lucide="arrow-right"></i>
+          </button>
+          <div class="wa-picker-menu" role="menu">
+            <a role="menuitem" href="https://wa.me/212782875788?text=Bonjour%20%21%20Je%20souhaite%20recevoir%20mon%20aper%C3%A7u%20gratuit." target="_blank" rel="noopener">Aperçu gratuit</a>
+            <a role="menuitem" href="https://wa.me/212782875788?text=Bonjour%20%21%20J%27ai%20une%20question%20sur%20vos%20tarifs." target="_blank" rel="noopener">Question sur les tarifs</a>
+            <a role="menuitem" href="https://wa.me/212782875788?text=Bonjour%20%21%20J%27aimerais%20discuter%20d%27un%20projet%20sur-mesure." target="_blank" rel="noopener">Projet sur-mesure</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<!-- ===================================== -->
+<!-- ABOUT / OUR STORY                     -->
+<!-- ===================================== -->
+
+<section class="section about-story" id="histoire">
+  <div class="wrap">
+
+    <div class="about-story-grid">
+
+      <!-- LEFT: THE HOOK -->
+      <div class="about-story-intro reveal">
+
+        <span class="eyebrow-chip">Pourquoi Webnary existe</span>
+
+        <h2>
+          On en avait assez
+          des sites qui
+          <span>se ressemblent tous.</span>
+        </h2>
+
+        <p class="about-story-kicker">
+          Alors on a décidé de construire les sites autrement :
+          moins de complications, moins de blabla, plus de travail qui
+          fait réellement la différence.
+        </p>
+
+        <div class="about-story-signature">
+          Webnary Studio
+        </div>
+
+      </div>
+
+
+      <!-- RIGHT: THE STORY -->
+      <div class="about-story-content reveal">
+
+        <!-- STORY 01 -->
+        <div class="story-block">
+
+          <span class="story-dot"></span>
+
+          <span class="story-label">Au départ</span>
+
+          <h3>
+            On voyait toujours le même problème.
+          </h3>
+
+          <p>
+            Un bon restaurant avec une vieille page Facebook.
+            Un artisan avec un vrai savoir-faire, mais presque rien
+            en ligne pour le montrer.
+            Un indépendant qui méritait mieux que quelques photos
+            et un numéro de téléphone.
+          </p>
+
+        </div>
+
+
+        <!-- STORY 02 -->
+        <div class="story-block">
+
+          <span class="story-dot"></span>
+
+          <span class="story-label">Puis on a compris</span>
+
+          <h3>
+            Le problème n'était pas leur business.
+          </h3>
+
+          <p>
+            C'était souvent la façon dont on leur vendait le web.
+            Des projets compliqués, des délais interminables,
+            des abonnements et des solutions pensées pour les grosses
+            entreprises.
+          </p>
+
+          <p style="margin-top:14px;">
+            Pourtant, un petit business n'a pas besoin d'une énorme agence
+            pour avoir un site qui inspire confiance.
+          </p>
+
+        </div>
+
+
+        <!-- STORY 03 -->
+        <div class="story-block">
+
+          <span class="story-dot"></span>
+
+          <span class="story-label">Alors on a changé ça</span>
+
+          <h3>
+            C'est là que Webnary est né.
+          </h3>
+
+          <p>
+            On a supprimé ce qui n'apportait rien :
+            les templates recyclés, les intermédiaires et les
+            fonctionnalités inutiles.
+          </p>
+
+          <p style="margin-top:14px;">
+            À la place, on construit un site pensé autour de votre activité,
+            de vos clients et de ce que vous voulez leur faire ressentir.
+          </p>
+
+        </div>
+
+
+        <!-- BIG STATEMENT -->
+        <div class="about-story-highlight">
+
+          <p>
+            Votre business n'est pas un template.
+            <strong>Votre site ne devrait pas en être un non plus.</strong>
+          </p>
+
+        </div>
+
+
+        <!-- FINAL -->
+        <div class="about-story-final">
+
+          <div class="about-story-final-icon">
+            <i data-lucide="sparkles"></i>
+          </div>
+
+          <div class="about-story-final-text">
+            <strong>Vous voyez avant de décider.</strong>
+            On vous montre d'abord ce qu'on imagine pour votre activité.
+            Ensuite seulement, on construit.
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+<section class="section" id="faq">
+  <div class="wrap" style="max-width:760px;">
+    <div class="section-head center reveal">
+      <h2>Questions fréquentes.</h2>
+    </div>
+    <div class="reveal">
+      <details open>
+        <summary>Combien de temps pour recevoir mon aperçu ?</summary>
+        <p>24h. Sans engagement, sans carte bancaire — juste ton activité et quelques infos sur WhatsApp.</p>
+      </details>
+      <details>
+        <summary>Le premier aperçu est-il vraiment gratuit ?</summary>
+        <p>Oui, entièrement. Tu ne payes que si tu valides le résultat.</p>
+      </details>
+      <details>
+        <summary>Je n'ai pas encore de contenu ou de photos, c'est grave ?</summary>
+        <p>Non. On démarre avec des placeholders et on les remplace dès que tu es prêt(e).</p>
+      </details>
+<details>
+  <summary>L'hébergement est-il compris ?</summary>
+  <p>
+    Ça dépend du type de projet. Le coût exact de l'hébergement,
+    du domaine et des éventuels services supplémentaires est précisé
+    avant le lancement.
+  </p>
+</details>  <details>
+  <summary>Puis-je modifier mon site moi-même après ?</summary>
+  <p>
+    Oui, selon la solution choisie. Les sites avec CMS permettent
+    de modifier facilement les contenus vous-même, et nous pouvons
+    également nous en occuper pour vous.
+  </p>
+</details>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap reveal">
+    <div class="cta-card">
+      <h2>Prêt à voir ton site ?</h2>
+      <p>Aperçu gratuit, réponse en 24h, aucun engagement.</p>
+      <div class="wa-picker">
+        <button type="button" class="btn btn-white wa-picker-trigger" aria-haspopup="true" aria-expanded="false">Discuter sur WhatsApp →</button>
+        <div class="wa-picker-menu" role="menu">
+          <a role="menuitem" href="https://wa.me/212782875788?text=Bonjour%20%21%20Je%20souhaite%20recevoir%20mon%20aper%C3%A7u%20gratuit." target="_blank" rel="noopener">Aperçu gratuit</a>
+          <a role="menuitem" href="https://wa.me/212782875788?text=Bonjour%20%21%20J%27ai%20une%20question%20sur%20vos%20tarifs." target="_blank" rel="noopener">Question sur les tarifs</a>
+          <a role="menuitem" href="https://wa.me/212782875788?text=Bonjour%20%21%20J%27aimerais%20discuter%20d%27un%20projet%20sur-mesure." target="_blank" rel="noopener">Projet sur-mesure</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="bracket">&lt;</span>Webnary<span class="bracket">/&gt;</span>
+        </div>
+        <p>Studio basé au Maroc, au service des indépendants et PME en France.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>SITE</h4>
+          <a href="#offres">Offres</a>
+          <a href="#etapes">Étapes</a>
+          <a href="#avis">Avis</a>
+          <a href="#faq">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <h4>CONTACT</h4>
+          <a href="https://wa.me/212782875788?text=Bonjour%20%21%20Je%20souhaite%20recevoir%20mon%20aper%C3%A7u%20gratuit.">WhatsApp</a>
+          <a href="tel:+212782875788">+212 782 875 788</a>
+          <a href="mailto:contact@webnary.studio">contact@webnary.studio</a>
+          <a href="https://webnary.studio">webnary.studio</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- FERMETURE DU WRAPPER ICI -->
+</div>
+
+<div class="sticky-cta">
+  <div class="wa-picker">
+    <button type="button" class="btn btn-primary wa-picker-trigger" aria-haspopup="true" aria-expanded="false">
+      <i data-lucide="message-circle" style="width:18px; height:18px; stroke-width:2.5px;"></i> Recevoir mon aperçu gratuit
+    </button>
+    <div class="wa-picker-menu" role="menu">
+      <a role="menuitem" href="https://wa.me/212782875788?text=Bonjour%20%21%20Je%20souhaite%20recevoir%20mon%20aper%C3%A7u%20gratuit." target="_blank" rel="noopener">Aperçu gratuit</a>
+      <a role="menuitem" href="https://wa.me/212782875788?text=Bonjour%20%21%20J%27ai%20une%20question%20sur%20vos%20tarifs." target="_blank" rel="noopener">Question sur les tarifs</a>
+      <a role="menuitem" href="https://wa.me/212782875788?text=Bonjour%20%21%20J%27aimerais%20discuter%20d%27un%20projet%20sur-mesure." target="_blank" rel="noopener">Projet sur-mesure</a>
+    </div>
+  </div>
+</div>
+
+<div class="wa-picker wa-picker--fixed">
+  <button type="button" class="wa-fixed wa-picker-trigger" aria-label="Contacter Webnary sur WhatsApp" aria-haspopup="true" aria-expanded="false">
+    <i data-lucide="message-circle"></i>
+  </button>
+  <div class="wa-picker-menu" role="menu">
+    <a role="menuitem" href="https://wa.me/212782875788?text=Bonjour%20%21%20Je%20souhaite%20recevoir%20mon%20aper%C3%A7u%20gratuit." target="_blank" rel="noopener">Aperçu gratuit</a>
+    <a role="menuitem" href="https://wa.me/212782875788?text=Bonjour%20%21%20J%27ai%20une%20question%20sur%20vos%20tarifs." target="_blank" rel="noopener">Question sur les tarifs</a>
+    <a role="menuitem" href="https://wa.me/212782875788?text=Bonjour%20%21%20J%27aimerais%20discuter%20d%27un%20projet%20sur-mesure." target="_blank" rel="noopener">Projet sur-mesure</a>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

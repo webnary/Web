@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA | High-End Beauty Concept</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Pro Icons (Free CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* === BEAUTY BRAND VARIABLES === */
+        :root {
+            --bg-color: #FAF5F5; /* Soft Blush Pink */
+            --text-dark: #2B181A; /* Deep Burgundy/Charcoal */
+            --text-light: #6E5356; /* Muted Rose */
+            --accent-color: #B56565; /* Soft Crimson */
+            --accent-dark: #8C4B4B; /* Deep Crimson */
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Outfit', sans-serif;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            font-family: var(--font-sans);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img { max-width: 100%; display: block; object-fit: cover; }
+        
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            position: relative;
+            height: 90vh;
+            /* High-fashion beauty model shot */
+            background-image: url('	https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?q=80&w=2574&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center 25%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Glassmorphism Navbar */
+        nav {
+            margin-top: 40px;
+            width: 95%;
+            max-width: 1100px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .nav-logo {
+            font-family: var(--font-serif);
+            font-size: 28px;
+            font-weight: 600;
+            color: white;
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 13px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: var(--transition);
+            opacity: 0.9;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+            color: #FFD8D8;
+            text-shadow: 0 0 10px rgba(255,255,255,0.5);
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 20px;
+            color: white;
+        }
+        
+        .nav-icons i {
+            font-size: 18px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .nav-icons i:hover { transform: translateY(-2px); color: #FFD8D8; }
+
+        /* Overlapping Typography */
+        .hero-title {
+            position: absolute;
+            bottom: -9%;
+            font-family: var(--font-serif);
+            font-size: 24vw;
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 0.7;
+            letter-spacing: -2px;
+            z-index: 5;
+            text-shadow: 0px 20px 50px rgba(43, 24, 26, 0.3);
+            pointer-events: none;
+        }
+
+        /* === BRAND PHILOSOPHY === */
+        .philosophy {
+            padding: 220px 0 120px;
+            display: flex;
+            align-items: center;
+            gap: 80px;
+        }
+
+        .text-content { flex: 1; }
+
+        .text-content h2 {
+            font-family: var(--font-serif);
+            font-size: 3.8rem;
+            line-height: 1.05;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .text-content p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            color: var(--text-light);
+            max-width: 480px;
+            font-weight: 300;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 36px;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px; /* Sharper borders for beauty brands */
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+            margin-top: 20px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(181, 101, 101, 0.3);
+        }
+
+        .img-wrapper {
+            flex: 1;
+            position: relative;
+        }
+
+        .img-wrapper img {
+            width: 85%;
+            margin-left: auto;
+            border-radius: 4px;
+            box-shadow: 0 25px 50px rgba(43, 24, 26, 0.1);
+        }
+
+        /* === PRODUCT GRID SECTION === */
+        .grid-showcase {
+            padding: 60px 0 120px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            align-items: center;
+        }
+
+        .grid-card {
+            overflow: hidden;
+            border-radius: 4px;
+            box-shadow: 0 15px 35px rgba(43, 24, 26, 0.08);
+            height: 500px;
+        }
+
+        .grid-card img {
+            width: 100%;
+            height: 100%;
+            transition: var(--transition);
+        }
+
+        .grid-card:hover img { transform: scale(1.05); }
+
+        .text-box {
+            padding-left: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .text-box h3 {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .text-box p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--text-light);
+            margin-bottom: 35px;
+            font-weight: 300;
+        }
+
+        .mini-gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .mini-gallery img {
+            border-radius: 4px;
+            height: 140px;
+            width: 100%;
+        }
+
+        /* === EDITORIAL LAYOUT SECTION === */
+        .editorial {
+            padding: 100px 0 180px;
+            position: relative;
+        }
+
+        .bg-typography {
+            position: absolute;
+            top: 150px;
+            left: -2%;
+            font-family: var(--font-serif);
+            font-size: 30vw;
+            color: var(--accent-color);
+            opacity: 0.07;
+            z-index: 0;
+            line-height: 0.75;
+            letter-spacing: -5px;
+            pointer-events: none;
+        }
+
+        .editorial-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            position: relative;
+            z-index: 2;
+        }
+
+        .editorial-top img {
+            width: 48%;
+            border-radius: 4px;
+            box-shadow: 0 20px 40px rgba(43, 24, 26, 0.1);
+        }
+
+        .editorial-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: 100px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .editorial-bottom img {
+            width: 55%;
+            border-radius: 4px;
+            box-shadow: 0 20px 40px rgba(43, 24, 26, 0.1);
+        }
+
+        .editorial-desc {
+            width: 38%;
+            padding-bottom: 20px;
+        }
+
+        .editorial-desc p {
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 35px;
+            font-size: 1.05rem;
+            font-weight: 300;
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 45px;
+            border: 1px solid var(--text-dark);
+            color: var(--text-dark);
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--text-dark);
+            color: var(--bg-color);
+        }
+
+        /* === FOOTER === */
+        footer {
+            background-color: #EFE4E4;
+            padding: 60px 40px;
+            text-align: center;
+            font-family: var(--font-sans);
+            color: var(--text-light);
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        /* === RESPONSIVE DESIGN === */
+        @media (max-width: 1024px) {
+            .philosophy, .editorial-top, .editorial-bottom { gap: 40px; }
+            .grid-showcase { grid-template-columns: repeat(2, 1fr); }
+            .text-box { grid-column: 1 / -1; padding-left: 0; margin-top: 20px; }
+            .grid-card { height: 400px; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero-title { font-size: 35vw; bottom: -5%; }
+            .philosophy { flex-direction: column; padding-top: 150px; text-align: center; }
+            .text-content p { margin: 0 auto 25px; }
+            .img-wrapper img { width: 100%; margin: 0; }
+            .grid-showcase { grid-template-columns: 1fr; }
+            .editorial-top, .editorial-bottom { flex-direction: column; align-items: center; text-align: center; }
+            .editorial-top img, .editorial-bottom img, .editorial-desc { width: 100%; }
+            .editorial-top img { margin-top: 40px; }
+            .bg-typography { font-size: 40vw; top: 250px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO -->
+    <section class="hero">
+        <nav>
+            <a href="#" class="nav-logo">AURA</a>
+            <ul class="nav-links">
+                <li><a href="#">Face</a></li>
+                <li><a href="#">Lips</a></li>
+                <li><a href="#">Eyes</a></li>
+                <li><a href="#">Collections</a></li>
+                <li><a href="#">Artistry</a></li>
+            </ul>
+            <div class="nav-icons">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-regular fa-user"></i>
+                <i class="fa-solid fa-bag-shopping"></i>
+            </div>
+        </nav>
+        <h1 class="hero-title">aura</h1>
+    </section>
+
+    <!-- BRAND PHILOSOPHY -->
+    <section class="philosophy container">
+        <div class="text-content">
+            <h2>The Art of Glamour:<br>Pigment Meets Perfection.</h2>
+            <p>AURA is about unapologetic self-expression. We formulate with rich, saturated pigments and ultra-blendable textures designed for flawless, high-impact looks.</p>
+            <p>We believe makeup should be an extension of your creativity. Experience the intersection of bold color theory and luminous, everyday wearability.</p>
+            <a href="#" class="btn-primary">Explore the Collections <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="img-wrapper">
+            <img src="https://images.pexels.com/photos/2533266/pexels-photo-2533266.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Luxurious makeup flatlay">
+        </div>
+    </section>
+
+    <!-- PRODUCT GRID SHOWCASE -->
+    <section class="grid-showcase container">
+        <div class="grid-card">
+            <img src="https://images.pexels.com/photos/1377034/pexels-photo-1377034.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Cosmetic pigment texture">
+        </div>
+        <div class="grid-card">
+            <img src="https://images.pexels.com/photos/3373739/pexels-photo-3373739.jpeg?auto=compress&cs=tinysrgb&w=800" alt="High fashion makeup look">
+        </div>
+        <div class="text-box">
+            <h3>Luminous Glow,<br>Velvet Finish.</h3>
+            <p>Thoughtfully crafted palettes and complexion perfectors designed to bring warmth and radiance to your daily routine. Lightweight foundations and striking lip colors work synergistically to elevate your unique features.</p>
+            <div class="mini-gallery">
+                <img src="https://images.pexels.com/photos/1115128/pexels-photo-1115128.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Makeup brush">
+                <img src="https://images.pexels.com/photos/2814828/pexels-photo-2814828.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Lipstick application">
+            </div>
+        </div>
+    </section>
+
+    <!-- EDITORIAL LAYOUT -->
+    <section class="editorial container">
+        <div class="bg-typography">glow</div>
+        
+        <div class="editorial-top">
+            <div class="text-content">
+                <h2>The Signature<br>Complexion Kit</h2>
+                <p>A curated collection engineered to deliver a seamless, airbrushed finish from morning to midnight.</p>
+            </div>
+            <img src="https://images.pexels.com/photos/3018845/pexels-photo-3018845.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Elegant cosmetic packaging">
+        </div>
+
+        <div class="editorial-bottom">
+            <img src="https://images.pexels.com/photos/4041392/pexels-photo-4041392.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Beauty model editorial">
+            <div class="editorial-desc">
+                <p>Each product effortlessly bridges the gap between skincare and color cosmetics. Infused with hydrating serums and light-reflecting pearls, this collection focuses on modern glamour—delivering maximum impact with buildable, breathable coverage.</p>
+                <a href="#" class="btn-outline">Shop the Kit</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 AURA Beauty Cosmetics. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

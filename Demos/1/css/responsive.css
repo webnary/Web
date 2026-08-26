@@ -1,0 +1,203 @@
+/* ============================================================
+   Corner Coffee Shop — RESPONSIVE.CSS
+   Mobile-first breakpoints: 480, 768, 1024, 1280px
+   ============================================================ */
+
+/* ============================================================
+   ≤ 480px (Small phones)
+   ============================================================ */
+@media (max-width: 480px) {
+  :root { --nav-h: 60px; }
+
+  .hero-headline { font-size: clamp(44px, 14vw, 64px); }
+  .hero-ctas { flex-direction: column; align-items: center; }
+  .hero-ctas .btn { width: 100%; justify-content: center; }
+
+  .about-stats { flex-direction: column; gap: 24px; }
+  .stat-num { font-size: 40px; }
+
+  .menu-item-desc { display: none; }
+  .menu-row-left { min-width: 120px; }
+  .menu-item-price { min-width: 60px; font-size: 14px; }
+
+  .process-steps { grid-template-columns: 1fr; gap: 48px; }
+  .process-step { border-right: none; padding: 0; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 40px; }
+  .process-step:last-child { border-bottom: none; }
+
+  .gallery-bento {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 200px 160px 160px;
+  }
+  .bento-item:nth-child(1) { grid-column: 1 / 3; grid-row: 1; }
+  .bento-item:nth-child(2) { grid-column: 1; grid-row: 2; }
+  .bento-item:nth-child(3) { grid-column: 2; grid-row: 2; }
+  .bento-item:nth-child(4) { grid-column: 1 / 3; grid-row: 3; }
+  .bento-item:nth-child(5) { display: none; }
+  .bento-item:nth-child(6) { display: none; }
+
+  .review-card { flex: 0 0 280px; padding: 28px; }
+  .review-quote { font-size: 70px; }
+
+  .contact-link-row { padding: 14px 0; }
+  .contact-link-value { font-size: 13px; }
+
+  .footer-main { flex-direction: column; align-items: flex-start; gap: 20px; }
+  .footer-links { gap: 16px; }
+
+  .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; }
+}
+
+/* ============================================================
+   ≤ 768px (Tablets and large phones)
+   ============================================================ */
+@media (max-width: 768px) {
+  :root { --section-pad: clamp(60px, 8vw, 100px); }
+
+  /* Nav: collapse to hamburger */
+  .nav-links {
+    position: fixed;
+    top: var(--nav-h);
+    left: 0; right: 0;
+    background: rgba(13,13,13,0.97);
+    backdrop-filter: blur(12px);
+    flex-direction: column;
+    gap: 0;
+    padding: 20px 0 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    transform: translateY(-110%);
+    transition: transform 0.4s var(--ease-out);
+    z-index: 99;
+    margin-left: 0;
+  }
+  .nav-links.is-open { transform: translateY(0); }
+  .nav-links li { width: 100%; }
+  .nav-links a {
+    display: block;
+    padding: 16px var(--gutter);
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .nav-links a::after { display: none; }
+  .nav-cta { display: none; }
+  .nav-toggle { display: flex; }
+
+  /* Hero */
+  .hero-bg-text { font-size: clamp(80px, 22vw, 200px); }
+  .hero-scroll-hint { display: none; }
+
+  /* About */
+  #about { grid-template-columns: 1fr; }
+  .about-right { min-height: 50vw; max-height: 60vw; }
+  .about-photo { height: 100%; }
+  .about-left { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+
+  /* Menu */
+  .menu-sidebar { display: none; }
+  .menu-mobile-tabs { display: flex; }
+  .menu-layout { grid-template-columns: 1fr; }
+  .menu-content { padding: 24px var(--gutter); }
+  .menu-item-desc { max-width: 140px; font-size: 12px; }
+  .menu-row { flex-wrap: wrap; gap: 8px; padding: 18px 0; }
+  .menu-dots { display: none; }
+  .menu-row-right { flex-direction: row-reverse; justify-content: space-between; width: 100%; gap: 8px; }
+  .menu-item-desc { max-width: 200px; }
+
+  /* Process */
+  .process-steps { grid-template-columns: 1fr; gap: 40px; }
+  .process-step { border-right: none; padding: 0; }
+  .process-step:not(:last-child)::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: rgba(255,255,255,0.1);
+    margin-top: 32px;
+  }
+
+  /* Gallery Bento */
+  .gallery-bento {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 240px 180px 200px;
+  }
+  .bento-item:nth-child(1) { grid-column: 1 / 3; grid-row: 1; }
+  .bento-item:nth-child(2) { grid-column: 1; grid-row: 2; }
+  .bento-item:nth-child(3) { grid-column: 2; grid-row: 2; }
+  .bento-item:nth-child(4) { grid-column: 1 / 3; grid-row: 3; }
+  .bento-item:nth-child(5) { display: none; }
+  .bento-item:nth-child(6) { display: none; }
+
+  /* Hours */
+  #hours { grid-template-columns: 1fr; }
+  .hours-left { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .hours-right { padding-top: 40px; }
+
+  /* Testimonials */
+  .review-card { flex: 0 0 85vw; }
+
+  /* Contact */
+  #contact { grid-template-columns: 1fr; }
+  .contact-left { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+
+  /* Footer */
+  .footer-main {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 28px 0;
+  }
+  .footer-links { gap: 16px; justify-content: flex-start; }
+}
+
+/* ============================================================
+   ≤ 1024px (Small laptops / large tablets)
+   ============================================================ */
+@media (max-width: 1024px) {
+  .menu-layout { grid-template-columns: 200px 1fr; }
+  .menu-sidebar { padding: 40px 24px; }
+  .menu-item-desc { max-width: 160px; }
+
+  .gallery-bento {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 260px 200px 220px;
+  }
+  .bento-item:nth-child(1) { grid-column: 1 / 3; grid-row: 1 / 3; }
+  .bento-item:nth-child(2) { grid-column: 3; grid-row: 1; }
+  .bento-item:nth-child(3) { grid-column: 3; grid-row: 2; }
+  .bento-item:nth-child(4) { grid-column: 1 / 3; grid-row: 3; }
+  .bento-item:nth-child(5) { grid-column: 3; grid-row: 3; }
+  .bento-item:nth-child(6) { display: none; }
+}
+
+/* ============================================================
+   ≥ 1280px (Large desktops — enhance)
+   ============================================================ */
+@media (min-width: 1280px) {
+  .menu-layout { grid-template-columns: 260px 1fr; }
+
+  .gallery-bento {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 320px 220px 260px;
+  }
+  .bento-item:nth-child(5) {
+    grid-column: 1 / 3;
+    grid-row: 3;
+    display: block;
+  }
+  .bento-item:nth-child(6) {
+    grid-column: 3 / 5;
+    grid-row: 3;
+    display: block;
+  }
+
+  .about-body p { font-size: 17px; }
+}
+
+/* ============================================================
+   Print styles
+   ============================================================ */
+@media print {
+  .site-nav, .whatsapp-float, #ticker, #gallery, #testimonials { display: none; }
+  body { background: white; color: black; }
+  .section-num { display: none; }
+}

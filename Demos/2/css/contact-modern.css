@@ -1,0 +1,482 @@
+/* ==================== CONTACT SECTION — EDITORIAL SPLIT ==================== */
+
+.ctc-section {
+    padding: 0;
+    background: #0f0e0d;
+    overflow: hidden;
+}
+
+/* ── Two-column split ── */
+.ctc-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* =================================================
+   LEFT PANEL — Dark, editorial, contact info
+   ================================================= */
+.ctc-left {
+    position: relative;
+    background: #0f0e0d;
+    padding: 7rem 5rem 6rem 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ── Vertical side label ── */
+.ctc-vertical-label {
+    position: absolute;
+    left: 1.8rem;
+    top: 50%;
+    transform: translateY(-50%) rotate(180deg);
+    writing-mode: vertical-rl;
+    font-family: var(--font-body, 'Lato', sans-serif);
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.18);
+}
+
+/* ── Headline block ── */
+.ctc-headline {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem 0;
+}
+
+.ctc-eyebrow {
+    display: block;
+    font-family: var(--font-body, 'Lato', sans-serif);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--dusty-rose, #C9A79A);
+    margin-bottom: 1.5rem;
+}
+
+.ctc-title {
+    font-family: var(--font-heading, 'Playfair Display', serif);
+    font-size: clamp(2.8rem, 5vw, 5.5rem);
+    font-weight: 400;
+    line-height: 1.05;
+    color: #faf9f6;
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+
+.ctc-title em {
+    font-style: italic;
+    color: var(--dusty-rose, #C9A79A);
+}
+
+/* ── Contact links — minimal text style ── */
+.ctc-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 3rem;
+}
+
+.ctc-link-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    gap: 1rem;
+}
+
+.ctc-link-item:first-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.ctc-link-label {
+    font-family: var(--font-body, 'Lato', sans-serif);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.25);
+    flex-shrink: 0;
+    min-width: 90px;
+}
+
+.ctc-link-value {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-body, 'Lato', sans-serif);
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.25s ease, gap 0.25s ease;
+}
+
+.ctc-link-value svg {
+    width: 14px;
+    height: 14px;
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    flex-shrink: 0;
+}
+
+.ctc-link-item:hover .ctc-link-value {
+    color: var(--dusty-rose, #C9A79A);
+    gap: 0.9rem;
+}
+
+.ctc-link-item:hover .ctc-link-value svg {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ── Availability pill ── */
+.ctc-availability {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: var(--font-body, 'Lato', sans-serif);
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.ctc-avail-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #4ade80; /* green = available */
+    flex-shrink: 0;
+    box-shadow: 0 0 8px rgba(74, 222, 128, 0.6);
+    animation: ctc-blink 2.5s ease-in-out infinite;
+}
+
+@keyframes ctc-blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.35; }
+}
+
+.ctc-availability strong {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 600;
+}
+
+/* ── Large decorative letter ── */
+.ctc-deco {
+    position: absolute;
+    bottom: -0.15em;
+    right: -0.05em;
+    font-family: var(--font-heading, 'Playfair Display', serif);
+    font-size: clamp(12rem, 22vw, 22rem);
+    font-weight: 700;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.025);
+    pointer-events: none;
+    user-select: none;
+    letter-spacing: -0.05em;
+}
+
+/* =================================================
+   RIGHT PANEL — Light, form
+   ================================================= */
+.ctc-right {
+    background: var(--warm-white, #FAF9F6);
+    padding: 7rem 5rem 6rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ctc-form-intro {
+    font-family: var(--font-body, 'Lato', sans-serif);
+    font-size: 1rem;
+    color: rgba(44, 44, 44, 0.5);
+    line-height: 1.7;
+    margin: 0 0 3.5rem 0;
+    max-width: 420px;
+}
+
+/* ── Form layout ── */
+.ctc-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.ctc-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+/* ── Floating label field ── */
+.ctc-field {
+    position: relative;
+    padding-top: 1.4rem; /* space for floated label */
+}
+
+/* Input + Textarea base */
+.ctc-field input,
+.ctc-field textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(44, 44, 44, 0.15);
+    border-radius: 0;
+    padding: 0.6rem 0 0.75rem;
+    font-family: var(--font-body, 'Lato', sans-serif);
+    font-size: 0.95rem;
+    color: var(--charcoal, #2C2C2C);
+    outline: none;
+    transition: border-color 0.3s ease;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.ctc-field textarea {
+    resize: none;
+    display: block;
+    line-height: 1.7;
+    margin-top: 0.2rem;
+}
+
+/* Floating label */
+.ctc-field label {
+    position: absolute;
+    top: 1.4rem;
+    left: 0;
+    font-family: var(--font-body, 'Lato', sans-serif);
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: rgba(44, 44, 44, 0.4);
+    pointer-events: none;
+    transform-origin: left top;
+    transition: transform 0.25s ease, color 0.25s ease, font-size 0.25s ease;
+}
+
+/* Label floats up when input has content OR is focused */
+/* placeholder=" " trick: placeholder is a single space so :not(:placeholder-shown) works */
+.ctc-field input:focus ~ label,
+.ctc-field input:not(:placeholder-shown) ~ label,
+.ctc-field textarea:focus ~ label,
+.ctc-field textarea:not(:placeholder-shown) ~ label,
+.ctc-field--select select:focus ~ label,
+.ctc-field--select select.has-value ~ label {
+    transform: translateY(-1.6rem) scale(0.72);
+    color: var(--dusty-rose, #C9A79A);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* Animated underline */
+.ctc-field-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background: var(--dusty-rose, #C9A79A);
+    transition: width 0.35s ease;
+}
+
+.ctc-field input:focus ~ .ctc-field-line,
+.ctc-field textarea:focus ~ .ctc-field-line,
+.ctc-field--select select:focus ~ .ctc-field-line {
+    width: 100%;
+}
+
+/* Remove default focus outline since we handle it with the line */
+.ctc-field input:focus,
+.ctc-field textarea:focus,
+.ctc-field--select select:focus {
+    outline: none;
+    border-bottom-color: transparent; /* underline takes over */
+}
+
+/* ── Select field ── */
+.ctc-field--select {
+    position: relative;
+}
+
+.ctc-field--select select {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(44, 44, 44, 0.15);
+    border-radius: 0;
+    padding: 0.6rem 2rem 0.75rem 0;
+    font-family: var(--font-body, 'Lato', sans-serif);
+    font-size: 0.95rem;
+    color: var(--charcoal, #2C2C2C);
+    outline: none;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    transition: border-color 0.3s ease;
+}
+
+.ctc-field--select select option[value=""] {
+    color: rgba(44, 44, 44, 0.4);
+}
+
+.ctc-select-arrow {
+    position: absolute;
+    right: 0;
+    bottom: 0.85rem;
+    width: 16px;
+    height: 16px;
+    color: rgba(44, 44, 44, 0.35);
+    pointer-events: none;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.ctc-field--select select:focus ~ .ctc-select-arrow {
+    color: var(--dusty-rose, #C9A79A);
+    transform: rotate(180deg);
+}
+
+/* ── Submit bar — full-width dark block ── */
+.ctc-submit {
+    position: relative;
+    width: 100%;
+    margin-top: 2.5rem;
+    padding: 1.3rem 2rem;
+    background: var(--charcoal, #2C2C2C);
+    color: var(--warm-white, #FAF9F6);
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    font-family: var(--font-body, 'Lato', sans-serif);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    transition: color 0.4s ease;
+}
+
+/* Hover fill — dusty rose sweeps in from left */
+.ctc-submit-fill {
+    position: absolute;
+    inset: 0;
+    background: var(--dusty-rose, #C9A79A);
+    transform: translateX(-100%);
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 0;
+}
+
+.ctc-submit:hover .ctc-submit-fill {
+    transform: translateX(0);
+}
+
+.ctc-submit-text,
+.ctc-submit-icon {
+    position: relative;
+    z-index: 1;
+}
+
+.ctc-submit-icon svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.ctc-submit:hover .ctc-submit-icon svg {
+    transform: translateX(4px);
+}
+
+/* Disabled/loading state */
+.ctc-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.ctc-submit:disabled .ctc-submit-fill {
+    transform: translateX(-100%);
+}
+
+/* ── Success / Error messages ── */
+.ctc-form .success-message,
+.ctc-form .error-message {
+    padding: 1rem 1.2rem;
+    border-radius: 0; /* flat edges match the design */
+    margin-top: 1rem;
+    font-family: var(--font-body, 'Lato', sans-serif);
+    font-size: 0.9rem;
+    font-weight: 600;
+    animation: ctc-msg-in 0.3s ease;
+}
+
+@keyframes ctc-msg-in {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* =================================================
+   RESPONSIVE
+   ================================================= */
+
+@media (max-width: 1024px) {
+    .ctc-left  { padding: 5rem 3rem 4rem 4rem; }
+    .ctc-right { padding: 5rem 3rem 4rem 3rem; }
+    .ctc-deco  { font-size: 16rem; }
+}
+
+@media (max-width: 768px) {
+    .ctc-inner {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .ctc-left {
+        padding: 5rem 2rem 4rem 2rem;
+        min-height: auto;
+    }
+
+    .ctc-deco {
+        font-size: 10rem;
+        bottom: -0.1em;
+    }
+
+    .ctc-vertical-label {
+        display: none;
+    }
+
+    .ctc-right {
+        padding: 3.5rem 2rem 5rem;
+    }
+
+    .ctc-form-row {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .ctc-left  { padding: 4rem 1.5rem 3rem; }
+    .ctc-right { padding: 3rem 1.5rem 4rem; }
+
+    .ctc-title {
+        font-size: clamp(2.2rem, 10vw, 3rem);
+    }
+
+    .ctc-submit {
+        padding: 1.1rem 1.5rem;
+    }
+}
