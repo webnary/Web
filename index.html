@@ -230,8 +230,20 @@ src="https://www.facebook.com/tr?id=1977595522817021&ev=PageView&noscript=1"
   </div>
 
   <div class="carousel-container reveal">
-    <div class="carousel-track">
-      
+
+    <!-- Prev / next controls: the carousel used to be auto-rotate only,
+         with no way for a visitor to move it on demand. These give
+         click (desktop) control; drag/swipe and arrow keys are wired
+         up in script.js on .carousel-track itself. -->
+    <button type="button" class="carousel-nav carousel-nav-prev" aria-label="Démo précédente">
+      <i data-lucide="chevron-left"></i>
+    </button>
+    <button type="button" class="carousel-nav carousel-nav-next" aria-label="Démo suivante">
+      <i data-lucide="chevron-right"></i>
+    </button>
+
+    <div class="carousel-track" tabindex="0" role="group" aria-label="Carrousel des démos, utilisez les flèches gauche/droite">
+
       <!-- Carte 0 (Tout à gauche) -->
       <div class="carousel-card card-pos-0">
         <a href="Demos/1/index.html" class="carousel-card-link" aria-label="Voir la démo 1">
@@ -269,10 +281,13 @@ src="https://www.facebook.com/tr?id=1977595522817021&ev=PageView&noscript=1"
 
     </div>
 
-    <!-- Le bouton "Expand" de la maquette -->
-    <div class="expand-btn">
+    <!-- Le bouton "Expand" de la maquette — was a bare <div>, no click
+         handler anywhere in script.js, so it just sat there looking
+         clickable. Now a real <button> wired up in script.js to open
+         the currently-centered demo. -->
+    <button type="button" class="expand-btn" aria-label="Ouvrir la démo affichée en grand">
       <i data-lucide="maximize-2"></i>
-    </div>
+    </button>
   </div>
 </section>
 

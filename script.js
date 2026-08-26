@@ -44,20 +44,34 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('click', () => closeAllPickers());
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeAllPickers(); });
 
-  /* ---------- "Aperçus" carousel (position-class rotation) ---------- */
+  /* ---------- "Aperçus" carousel (position-class rotation) ----------
+     Was auto-rotate only: no arrows, no drag/swipe, no keyboard way
+     to move it on demand. Added below: prev/next buttons, pointer
+     drag (mouse + touch via Pointer Events), ArrowLeft/ArrowRight,
+     and the expand button now actually opens the centered demo. */
   const trackCards = Array.from(document.querySelectorAll('.carousel-card'));
   if (trackCards.length > 0) {
     // The 5 possible slots
     let classPositions = ['card-pos-0', 'card-pos-1', 'card-pos-2', 'card-pos-3', 'card-pos-4'];
     let carouselTimer = null;
 
-    function moveCarouselNext() {
-      // Move the last slot to the front to shift everything right
-      classPositions.unshift(classPositions.pop());
-      // Re-apply the slot classes to each card (CSS handles the animation)
+    function applyPositions() {
       trackCards.forEach((card, index) => {
         card.className = `carousel-card ${classPositions[index]}`;
       });
+    }
+
+    function moveCarouselNext() {
+      // Move the last slot to the front to shift everything right
+      classPositions.unshift(classPositions.pop());
+      applyPositions();
+    }
+
+    function moveCarouselPrev() {
+      // Mirror of moveCarouselNext: move the first slot to the back
+      // to shift everything left.
+      classPositions.push(classPositions.shift());
+      applyPositions();
     }
 
     function startCarousel() {
@@ -67,6 +81,12 @@ document.addEventListener('DOMContentLoaded', () => {
     function stopCarousel() {
       clearInterval(carouselTimer);
       carouselTimer = null;
+    }
+    // Used after a manual prev/next/drag so auto-rotate doesn't fire
+    // right on top of what the visitor just did.
+    function restartCarousel() {
+      stopCarousel();
+      startCarousel();
     }
 
     // Auto-advance every 3.5s
@@ -79,6 +99,77 @@ document.addEventListener('DOMContentLoaded', () => {
     if (carouselTrack) {
       carouselTrack.addEventListener('mouseenter', stopCarousel);
       carouselTrack.addEventListener('mouseleave', startCarousel);
+    }
+
+    // ---- Prev / next buttons ----
+    const prevBtn = document.querySelector('.carousel-nav-prev');
+    const nextBtn = document.querySelector('.carousel-nav-next');
+    if (prevBtn) prevBtn.addEventListener('click', () => { moveCarouselPrev(); restartCarousel(); });
+    if (nextBtn) nextBtn.addEventListener('click', () => { moveCarouselNext(); restartCarousel(); });
+
+    // ---- Keyboard: ArrowLeft/ArrowRight while the track is focused ----
+    if (carouselTrack) {
+      carouselTrack.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') { e.preventDefault(); moveCarouselPrev(); restartCarousel(); }
+        else if (e.key === 'ArrowRight') { e.preventDefault(); moveCarouselNext(); restartCarousel(); }
+      });
+    }
+
+    // ---- Drag / swipe (mouse + touch, via Pointer Events) ----
+    if (carouselTrack) {
+      let dragging = false;
+      let dragged = false; // true once movement passes the click threshold
+      let startX = 0;
+
+      carouselTrack.addEventListener('pointerdown', (e) => {
+        dragging = true;
+        dragged = false;
+        startX = e.clientX;
+        stopCarousel();
+        carouselTrack.setPointerCapture(e.pointerId);
+      });
+
+      carouselTrack.addEventListener('pointermove', (e) => {
+        if (!dragging) return;
+        if (Math.abs(e.clientX - startX) > 6) dragged = true;
+      });
+
+      carouselTrack.addEventListener('pointerup', (e) => {
+        if (!dragging) return;
+        dragging = false;
+        const delta = e.clientX - startX;
+        const THRESHOLD = 40; // px before it counts as an intentional swipe
+        if (delta > THRESHOLD) moveCarouselPrev();      // dragged right -> show previous
+        else if (delta < -THRESHOLD) moveCarouselNext(); // dragged left -> show next
+        restartCarousel();
+      });
+
+      carouselTrack.addEventListener('pointercancel', () => { dragging = false; restartCarousel(); });
+
+      // A drag ending on top of a card link would otherwise trigger
+      // navigation to that demo. Swallow the click only when the
+      // pointer actually moved past the threshold.
+      carouselTrack.addEventListener('click', (e) => {
+        if (dragged) {
+          e.preventDefault();
+          e.stopPropagation();
+          dragged = false;
+        }
+      }, true);
+    }
+
+    // ---- Expand button: open the currently centered demo ----
+    // Was a bare, unwired <div> before; now a real <button> (see
+    // index.html) that resolves whichever card is in the "active"
+    // center slot (card-pos-2) and follows its link.
+    const expandBtn = document.querySelector('.expand-btn');
+    if (expandBtn) {
+      expandBtn.addEventListener('click', () => {
+        const centerCard = document.querySelector('.carousel-card.card-pos-2 .carousel-card-link');
+        if (centerCard && centerCard.href) {
+          window.location.href = centerCard.href;
+        }
+      });
     }
   }
 
