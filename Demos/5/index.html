@@ -49,7 +49,7 @@
             position: relative;
             height: 90vh;
             /* High-fashion beauty model shot */
-            background-image: url('	https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?q=80&w=2574&auto=format&fit=crop');
+            background-image: url('https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?q=80&w=2574&auto=format&fit=crop');
             background-size: cover;
             background-position: center 25%;
             display: flex;
@@ -120,6 +120,50 @@
         }
         
         .nav-icons i:hover { transform: translateY(-2px); color: #FFD8D8; }
+
+        /* Mobile nav toggle (hidden on desktop) */
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        /* Mobile dropdown menu */
+        .nav-links-mobile {
+            display: none;
+            position: absolute;
+            top: 95px;
+            left: 2.5%;
+            width: 95%;
+            max-width: 1100px;
+            background: rgba(43, 24, 26, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 10px 0;
+            list-style: none;
+            z-index: 20;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+
+        .nav-links-mobile.open { display: flex; flex-direction: column; }
+
+        .nav-links-mobile a {
+            display: block;
+            padding: 16px 30px;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .nav-links-mobile li:last-child a { border-bottom: none; }
 
         /* Overlapping Typography */
         .hero-title {
@@ -361,16 +405,48 @@
         }
 
         @media (max-width: 768px) {
+            .container { padding: 0 24px; }
             .nav-links { display: none; }
+            .nav-toggle { display: block; }
             .hero-title { font-size: 35vw; bottom: -5%; }
             .philosophy { flex-direction: column; padding-top: 150px; text-align: center; }
+            .text-content h2 { font-size: 2.6rem; }
             .text-content p { margin: 0 auto 25px; }
             .img-wrapper img { width: 100%; margin: 0; }
+
+            /* Grid showcase: put the text block first so mobile reads
+               heading -> supporting copy -> images, instead of
+               image / image / text / image / image */
             .grid-showcase { grid-template-columns: 1fr; }
+            .text-box { order: -1; padding-bottom: 20px; }
+            .text-box h3 { font-size: 2.2rem; }
+            .grid-card { height: 340px; }
+
+            /* Editorial: text-content is already first in editorial-top.
+               editorial-bottom has image first in the DOM; reorder so the
+               description leads on mobile too, matching editorial-top. */
             .editorial-top, .editorial-bottom { flex-direction: column; align-items: center; text-align: center; }
             .editorial-top img, .editorial-bottom img, .editorial-desc { width: 100%; }
             .editorial-top img { margin-top: 40px; }
+            .editorial-bottom { margin-top: 60px; }
+            .editorial-bottom .editorial-desc { order: -1; margin-bottom: 30px; }
             .bg-typography { font-size: 40vw; top: 250px; }
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 0 18px; }
+            .hero-title { font-size: 22vw; bottom: -4%; }
+            nav { padding: 12px 20px; margin-top: 20px; }
+            .nav-logo { font-size: 22px; }
+            .philosophy { padding-top: 120px; }
+            .text-content h2 { font-size: 2rem; }
+            .text-content p { font-size: 1rem; }
+            .text-box h3 { font-size: 1.8rem; }
+            .grid-card { height: 260px; }
+            .mini-gallery img { height: 110px; }
+            .editorial { padding: 60px 0 100px; }
+            .editorial-desc p { font-size: 0.95rem; }
+            .btn-primary, .btn-outline { padding: 14px 28px; font-size: 12px; }
         }
     </style>
 </head>
@@ -391,8 +467,18 @@
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <i class="fa-regular fa-user"></i>
                 <i class="fa-solid fa-bag-shopping"></i>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </div>
         </nav>
+        <ul class="nav-links-mobile" id="navLinksMobile">
+            <li><a href="#">Face</a></li>
+            <li><a href="#">Lips</a></li>
+            <li><a href="#">Eyes</a></li>
+            <li><a href="#">Collections</a></li>
+            <li><a href="#">Artistry</a></li>
+        </ul>
         <h1 class="hero-title">aura</h1>
     </section>
 
@@ -453,5 +539,17 @@
         <p>&copy; 2026 AURA Beauty Cosmetics. All rights reserved.</p>
     </footer>
 
+    <script>
+        const navToggle = document.getElementById('navToggle');
+        const navLinksMobile = document.getElementById('navLinksMobile');
+
+        navToggle.addEventListener('click', () => {
+            const isOpen = navLinksMobile.classList.toggle('open');
+            navToggle.setAttribute('aria-expanded', isOpen);
+            navToggle.innerHTML = isOpen
+                ? '<i class="fa-solid fa-xmark"></i>'
+                : '<i class="fa-solid fa-bars"></i>';
+        });
+    </script>
 </body>
 </html>
