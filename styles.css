@@ -866,7 +866,7 @@
 .nav .wa-picker.open .wa-picker-menu{ transform:translateY(0); }
 /* Sticky mobile bar: menu should open upward and stay full-width friendly */
 .sticky-cta .wa-picker{ display:block; width:100%; }
-.sticky-cta .wa-picker-menu{ left:0; right:0; transform:translateY(6px); width:auto; }
+.sticky-cta .wa-picker-menu{ top:auto; bottom:calc(100% + 10px); left:0; right:0; transform:translateY(6px); width:auto; }
 .sticky-cta .wa-picker.open .wa-picker-menu{ transform:translateY(0); }
 
 /* .pricing-box needs overflow:hidden so row hover-backgrounds respect
