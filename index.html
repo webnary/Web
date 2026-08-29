@@ -87,9 +87,10 @@ src="https://www.facebook.com/tr?id=1977595522817021&ev=PageView&noscript=1"
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,800&display=swap" rel="stylesheet">
-<!-- Lucide Icons -->
-<script src="https://unpkg.com/lucide@latest"></script>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,800&display=swap" rel="stylesheet"></noscript>
+<!-- Lucide Icons (bundle scoped to the 7 icons actually used on this page) -->
+<script src="lucide-icons.min.js" defer></script>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -115,7 +116,7 @@ src="https://www.facebook.com/tr?id=1977595522817021&ev=PageView&noscript=1"
 </header>
 
 <!-- AJOUT DU WRAPPER ICI -->
-<div class="main-wrapper">
+<main class="main-wrapper">
 
 <section class="hero-centered">
 
@@ -147,7 +148,7 @@ src="https://www.facebook.com/tr?id=1977595522817021&ev=PageView&noscript=1"
 
    <!-- Tech Stack: Scrolling Marquee -->
     <div class="hero-stack-marquee">
-      <div class="tech-stack" role="list" aria-label="Technologies we build with">
+      <div class="tech-stack" aria-label="Technologies we build with">
   <img src="assets/logos/shopify_monotone_black.svg" alt="Shopify" height="28">
   <img src="assets/logos/GitHub_Lockup_Black_Clearspace.svg" alt="GitHub" height="28">
     <img src="assets/logos/WordPress-logotype-standard.png" alt="WordPress" height="28">
@@ -233,35 +234,35 @@ src="https://www.facebook.com/tr?id=1977595522817021&ev=PageView&noscript=1"
       <!-- Carte 0 (Tout à gauche) -->
       <div class="carousel-card card-pos-0">
         <a href="Demos/1/index.html" class="carousel-card-link" aria-label="Voir la démo 1">
-          <img src="images/portfolio-1.jpg" alt="Montagne">
+          <img src="images/portfolio-1.jpg" alt="Montagne" loading="lazy" decoding="async">
         </a>
       </div>
 
       <!-- Carte 1 (Gauche) -->
       <div class="carousel-card card-pos-1">
         <a href="Demos/3/index.html" class="carousel-card-link" aria-label="Voir la démo 3">
-          <img src="images/portfolio-3.jpg" alt="Avion">
+          <img src="images/portfolio-3.jpg" alt="Avion" loading="lazy" decoding="async">
         </a>
       </div>
 
       <!-- Carte 2 (Centre Actif) -->
       <div class="carousel-card card-pos-2">
         <a href="Demos/2/index.html" class="carousel-card-link" aria-label="Voir la démo 2">
-          <img src="images/portfolio-2.jpg" alt="Lac et quai">
+          <img src="images/portfolio-2.jpg" alt="Lac et quai" loading="lazy" decoding="async">
         </a>
       </div>
 
       <!-- Carte 3 (Droite) -->
       <div class="carousel-card card-pos-3">
         <a href="Demos/4/index.html" class="carousel-card-link" aria-label="Voir la démo 4">
-          <img src="images/portfolio-4.jpg" alt="Appareil photo">
+          <img src="images/portfolio-4.jpg" alt="Appareil photo" loading="lazy" decoding="async">
         </a>
       </div>
 
       <!-- Carte 4 (Tout à droite) -->
       <div class="carousel-card card-pos-4">
         <a href="Demos/5/index.html" class="carousel-card-link" aria-label="Voir la démo 5">
-          <img src="images/portfolio-5.jpg" alt="Randonneur">
+          <img src="images/portfolio-5.jpg" alt="Randonneur" loading="lazy" decoding="async">
         </a>
       </div>
 
@@ -518,13 +519,13 @@ src="https://www.facebook.com/tr?id=1977595522817021&ev=PageView&noscript=1"
       </div>
       <div class="footer-links">
         <div class="footer-col">
-          <h4>SITE</h4>
+          <p class="footer-col-title">SITE</p>
           <a href="#etapes">Étapes</a>
           <a href="#avis">Avis</a>
           <a href="#faq">FAQ</a>
         </div>
         <div class="footer-col">
-          <h4>CONTACT</h4>
+          <p class="footer-col-title">CONTACT</p>
           <a href="https://form.webnary.studio" target="_blank" rel="noopener">Réserver un aperçu</a>
           <a href="https://wa.me/33767708253?text=Bonjour%20%21%20J%27ai%20une%20question." target="_blank" rel="noopener">WhatsApp</a>
           <a href="mailto:contact@webnary.studio">contact@webnary.studio</a>
@@ -537,7 +538,7 @@ src="https://www.facebook.com/tr?id=1977595522817021&ev=PageView&noscript=1"
 </footer>
 
 <!-- FERMETURE DU WRAPPER ICI -->
-</div>
+</main>
 
 <div class="sticky-cta">
   <a href="https://form.webnary.studio" class="btn btn-primary" target="_blank" rel="noopener">
