@@ -16,34 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: .12 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-  /* ---------- Segmented WhatsApp picker ----------
-     Opens a small menu of pre-filled intents instead of sending
-     everyone the same generic message. */
-  function closeAllPickers(except) {
-    document.querySelectorAll('.wa-picker.open').forEach(p => {
-      if (p === except) return;
-      p.classList.remove('open');
-      const t = p.querySelector('.wa-picker-trigger');
-      if (t) t.setAttribute('aria-expanded', 'false');
-    });
-  }
-  document.querySelectorAll('.wa-picker-trigger').forEach(trigger => {
-    trigger.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const picker = trigger.closest('.wa-picker');
-      const isOpen = picker.classList.contains('open');
-      closeAllPickers();
-      if (!isOpen) {
-        picker.classList.add('open');
-        trigger.setAttribute('aria-expanded', 'true');
-      } else {
-        trigger.setAttribute('aria-expanded', 'false');
-      }
-    });
-  });
-  document.addEventListener('click', () => closeAllPickers());
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeAllPickers(); });
-
   /* ---------- "Aperçus" carousel (position-class rotation) ----------
      Was auto-rotate only: no arrows, no drag/swipe, no keyboard way
      to move it on demand. Added below: prev/next buttons, pointer
@@ -173,13 +145,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  /* ---------- Mobile nav toggle (new) ----------
+  /* ---------- Mobile nav toggle ----------
      .nav-links has no visible trigger below the 860px breakpoint,
-     so section anchors (#offres, #etapes, #avis, #faq) were
-     unreachable from the header on phones. This wires up the
-     hamburger button added in the header markup, reusing the same
-     open/close + outside-click + Escape pattern as the WhatsApp
-     picker above for consistency. */
+     so section anchors (#etapes, #avis, #faq) were unreachable
+     from the header on phones. This wires up the hamburger button
+     added in the header markup: open/close + outside-click +
+     Escape, same as any dropdown. */
   const navToggle = document.getElementById('navToggle');
   const navEl = document.querySelector('.nav');
   if (navToggle && navEl) {
