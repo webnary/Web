@@ -94,6 +94,13 @@ document.addEventListener('DOMContentLoaded', () => {
       let startX = 0;
 
       carouselTrack.addEventListener('pointerdown', (e) => {
+        // Drag-to-swipe is now touch/pen only. On mouse, this whole
+        // block was fighting with plain link clicks (see the pointerup
+        // comment below) — simplest fix is to just not engage the
+        // custom drag machinery for mouse input at all. Mouse users
+        // get native clicks + the prev/next buttons + arrow keys;
+        // touch users keep the swipe gesture.
+        if (e.pointerType === 'mouse') return;
         dragging = true;
         dragged = false;
         startX = e.clientX;
@@ -103,20 +110,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
       carouselTrack.addEventListener('pointermove', (e) => {
         if (!dragging) return;
-        if (Math.abs(e.clientX - startX) > 6) dragged = true;
+        // Previously flipped `dragged` true on any single sample past
+        // 6px and never reset it — so ordinary mouse hand-tremor during
+        // a click (frequent, granular pointermove reports) permanently
+        // marked the gesture as a drag even if the cursor settled back
+        // near the start before release, silently killing the click.
+        // Net displacement is now judged once, at pointerup, instead.
       });
 
       carouselTrack.addEventListener('pointerup', (e) => {
         if (!dragging) return;
         dragging = false;
         const delta = e.clientX - startX;
-        const THRESHOLD = 40; // px before it counts as an intentional swipe
-        if (delta > THRESHOLD) moveCarouselPrev();      // dragged right -> show previous
-        else if (delta < -THRESHOLD) moveCarouselNext(); // dragged left -> show next
+        const SWIPE_THRESHOLD = 40;   // px before it counts as an intentional swipe
+        const CLICK_THRESHOLD = 10;   // px of net movement before a click gets suppressed
+        dragged = Math.abs(delta) > CLICK_THRESHOLD;
+        if (delta > SWIPE_THRESHOLD) moveCarouselPrev();      // dragged right -> show previous
+        else if (delta < -SWIPE_THRESHOLD) moveCarouselNext(); // dragged left -> show next
         restartCarousel();
       });
 
       carouselTrack.addEventListener('pointercancel', () => { dragging = false; restartCarousel(); });
+
+      // Images are draggable by default in every browser. On desktop,
+      // a mouse click almost always has a tiny bit of movement, which
+      // was triggering the browser's native "drag this image" gesture
+      // instead of a click — and a native drag silently swallows the
+      // click event that follows, so the demo link never opened.
+      // Blocking dragstart on the track fixes this without touching
+      // the custom pointer-based swipe logic above.
+      carouselTrack.addEventListener('dragstart', (e) => { e.preventDefault(); });
 
       // A drag ending on top of a card link would otherwise trigger
       // navigation to that demo. Swallow the click only when the

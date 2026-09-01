@@ -446,6 +446,9 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  -webkit-user-drag: none;
+  user-drag: none;
+  -webkit-touch-callout: none;
 }
 
 /* Makes the whole card clickable: the <a> wraps the image and just
