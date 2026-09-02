@@ -8,6 +8,7 @@
     
     /* Couleurs principales */
     --amber: #F6B73C;
+    --amber-ink: #a4680f; /* darkened amber for text on --bg: raw --amber is 1.6:1, fails WCAG AA (needs 3:1 min for large/bold text) */
     --mint: #8FE3C0;
     --sky: #A9C3F5;
     
@@ -332,7 +333,7 @@
   margin-bottom: 22px;
 }
 .hero-centered h1 .highlight {
-  color: var(--amber);
+  color: var(--amber-ink);
 }
 
 .hero-centered p.lead {
@@ -699,7 +700,7 @@
 .price-icon svg{ width:20px; height:20px; }
 .price-icon.sky{ background:var(--sky-light); color:var(--indigo); }
 .price-icon.mint{ background:var(--mint-light); color:#1e875b; }
-.price-icon.amber{ background:var(--amber-light); color:#a4680f; }
+.price-icon.amber{ background:var(--amber-light); color:var(--amber-ink); }
 .price-icon.indigo{ background:var(--indigo); color:#fff; }
 
 .price-eyebrow{ font-size:11px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:10px; }
