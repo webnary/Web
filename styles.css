@@ -667,6 +667,62 @@
   display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800;
 }
 .testi-name{ font-size:13.5px; font-weight:700; color:var(--ink); }
+
+/* ========================================= */
+/* PRICING / TARIFS                           */
+/* ========================================= */
+.pricing-grid{ display:grid; gap:20px; grid-template-columns:1fr; }
+@media (min-width:640px){ .pricing-grid{ grid-template-columns:repeat(2,1fr); } }
+@media (min-width:1100px){ .pricing-grid{ grid-template-columns:repeat(4,1fr); } }
+
+.price-card{
+  position:relative; display:flex; flex-direction:column;
+  background:var(--card); border:1px solid var(--line); border-radius:var(--r-lg);
+  padding:30px 24px 24px; box-shadow:0 10px 26px rgba(27,23,48,.04);
+  transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.price-card:hover{ transform:translateY(-6px); box-shadow:0 20px 40px rgba(27,23,48,.08); }
+.price-card.is-featured{ border:2px solid var(--indigo); box-shadow:0 20px 44px rgba(67,56,202,.16); }
+@media (min-width:1100px){ .price-card.is-featured{ transform:translateY(-10px); } }
+
+.price-badge{
+  position:absolute; top:-13px; left:50%; transform:translateX(-50%);
+  background:var(--indigo); color:#fff; font-size:11px; font-weight:700;
+  padding:5px 14px; border-radius:999px; white-space:nowrap;
+  box-shadow:0 8px 18px rgba(67,56,202,.35);
+}
+
+.price-icon{
+  width:40px; height:40px; border-radius:12px; margin-bottom:16px;
+  display:flex; align-items:center; justify-content:center;
+}
+.price-icon svg{ width:20px; height:20px; }
+.price-icon.sky{ background:var(--sky-light); color:var(--indigo); }
+.price-icon.mint{ background:var(--mint-light); color:#1e875b; }
+.price-icon.amber{ background:var(--amber-light); color:#a4680f; }
+.price-icon.indigo{ background:var(--indigo); color:#fff; }
+
+.price-eyebrow{ font-size:11px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:10px; }
+.price-amount{ display:flex; align-items:baseline; gap:6px; }
+.price-amount .value{ font-size:clamp(24px,3vw,30px); font-weight:800; letter-spacing:-.02em; }
+.price-amount .unit{ font-size:12.5px; font-weight:600; color:var(--ink-soft); }
+.price-name{ font-size:14px; color:var(--ink-soft); margin:4px 0 18px; }
+
+.price-features{ list-style:none; flex:1; margin-bottom:16px; }
+.price-features li{ display:flex; align-items:flex-start; gap:8px; font-size:13.6px; padding:6px 0; color:var(--ink); }
+.price-features li::before{ content:'—'; color:var(--indigo-2); font-weight:700; flex-shrink:0; }
+
+.price-note{
+  font-size:12px; line-height:1.5; color:var(--ink-soft);
+  padding-top:12px; margin-bottom:18px; border-top:1px solid var(--line);
+}
+
+.price-cta{ width:100%; justify-content:center; margin-top:auto; }
+.price-cta[aria-disabled="true"]{
+  background:var(--bg); color:var(--ink-soft); border:2px solid var(--line);
+  cursor:not-allowed; pointer-events:none;
+}
+
 /* =========================================
    ABOUT / OUR STORY
    ========================================= */
