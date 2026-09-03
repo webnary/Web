@@ -172,7 +172,15 @@ src="https://www.facebook.com/tr?id=1977595522817021&ev=PageView&noscript=1"
   <span class="hero-bracket hero-bracket-left" aria-hidden="true">&lt;</span>
   <span class="hero-bracket hero-bracket-right" aria-hidden="true">/&gt;</span>
 
-  <div class="hero-content reveal">
+  <!-- hero-content used to carry the "reveal" fade-in class like the
+       sections below it — but it's above the fold and already visible
+       on load, so that class was starting it at opacity:0 and holding
+       it there until the IntersectionObserver fired *and* the 0.7s
+       CSS transition finished. PageSpeed's LCP breakdown pointed
+       straight at this: it flagged the hero CTA button as the LCP
+       element with a 1.4s render delay. Scroll-reveal is for content
+       the visitor scrolls to — never for the first thing they see. -->
+  <div class="hero-content">
 
     <!-- Trust line: back above the headline, plain (no avatar, no badge stack) -->
     <a class="hero-trust-line" href="#avis" style="text-decoration:none;">

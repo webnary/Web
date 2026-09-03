@@ -119,19 +119,15 @@ document.addEventListener('DOMContentLoaded', () => {
         carouselTrack.setPointerCapture(e.pointerId);
       });
 
-      carouselTrack.addEventListener('pointermove', (e) => {
-        if (!dragging) return;
-        // Previously flipped `dragged` true on any single sample past
-        // 6px and never reset it — so ordinary mouse hand-tremor during
-        // a click (frequent, granular pointermove reports) permanently
-        // marked the gesture as a drag even if the cursor settled back
-        // near the start before release, silently killing the click.
-        // Net displacement is now judged once, at pointerup, instead.
-      });
-
       carouselTrack.addEventListener('pointerup', (e) => {
         if (!dragging) return;
         dragging = false;
+        // Previously flipped `dragged` true on any single pointermove sample
+        // past 6px and never reset it — so ordinary mouse hand-tremor during
+        // a click (frequent, granular pointermove reports) permanently
+        // marked the gesture as a drag even if the cursor settled back near
+        // the start before release, silently killing the click. Net
+        // displacement is judged once, here, at pointerup, instead.
         const delta = e.clientX - startX;
         const SWIPE_THRESHOLD = 40;   // px before it counts as an intentional swipe
         const CLICK_THRESHOLD = 10;   // px of net movement before a click gets suppressed
