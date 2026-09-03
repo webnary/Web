@@ -6,6 +6,17 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  /* ---------- Non-blocking Google Fonts swap ----------
+     index.html now loads the Google Fonts CSS as <link rel="preload"
+     as="style"> instead of a blocking <link rel="stylesheet">, so it
+     no longer holds up first paint. Flipping rel to "stylesheet" here
+     applies it — this reuses the same request the preload already
+     started (same URL, same browser cache entry), it doesn't trigger
+     a second fetch. */
+  document.querySelectorAll('link[rel="preload"][as="style"]').forEach(link => {
+    link.rel = 'stylesheet';
+  });
+
   /* ---------- Lucide icons ---------- */
   // Initialize Lucide Icons
   lucide.createIcons();
