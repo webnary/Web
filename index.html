@@ -8,7 +8,7 @@
      JSON-LD hash was missing before, which meant the CSP was silently
      blocking that script (as it was already doing to fbq('track','Lead'),
      also fixed below). -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-ZfdSG9Eku9B7cv3SsbJLpooPQ97oVq/Bri7s5k1Ct78=' 'sha256-YesrB8otHD45vuplnqtRwuYAaS88ccgvhNLe1kJWZV4=' 'sha256-/MGQDgxvOugCEa0aUnNc04Ln7s16A2KxX0SevTC7DLE=' https://www.googletagmanager.com https://connect.facebook.net https://www.clarity.ms https://scripts.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://www.facebook.com data:; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://connect.facebook.net https://i.clarity.ms https://c.clarity.ms https://k.clarity.ms https://y.clarity.ms; base-uri 'self'; form-action 'self' https://form.webnary.studio">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-ZfdSG9Eku9B7cv3SsbJLpooPQ97oVq/Bri7s5k1Ct78=' 'sha256-YesrB8otHD45vuplnqtRwuYAaS88ccgvhNLe1kJWZV4=' 'sha256-EzZOaIz/1RBPuvi1Ybkn9gT6TpxjZ1ntn4vTiscrDgM=' https://www.googletagmanager.com https://connect.facebook.net https://www.clarity.ms https://scripts.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://www.facebook.com data:; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://connect.facebook.net https://i.clarity.ms https://c.clarity.ms https://k.clarity.ms https://y.clarity.ms; base-uri 'self'; form-action 'self' https://form.webnary.studio">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Webnary Studio — Des sites web qui vous trouvent des clients</title>
 <meta name="description" content="Studio web pour indépendants et entreprises en France. Aperçu gratuit sous 24h, à partir de 150€, sans engagement.">
@@ -115,7 +115,8 @@
     })(window, document, "clarity", "script", "y72hvm79s1");
   }
 
-  if (document.readyState === 'complete') { start(); }
+   var isAdClick = /[?&](fbclid|gclid)=/.test(location.search);
+  if (isAdClick || document.readyState === 'complete') { start(); }
   else { window.addEventListener('load', start); }
   ['pointerdown', 'keydown', 'scroll'].forEach(function(evt){
     window.addEventListener(evt, start, { once: true, passive: true });
