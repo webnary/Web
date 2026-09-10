@@ -26,12 +26,17 @@
     fbq('init', '1652232292927046');
     fbq('track', 'PageView');
 
-    // Microsoft Clarity
+    // Microsoft Clarity — TEMPORARILY DISABLED 2026-09-10 for a controlled
+    // PageSpeed A/B test (isolating its main-thread/TBT impact from gtag/fbq).
+    // Re-enable by uncommenting the block below. No CSP change needed either
+    // way — script-src already allows clarity.ms and isn't touched here.
+    /*
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "y72hvm79s1");
+    */
   }
 
    var isAdClick = /[?&](fbclid|gclid)=/.test(location.search);
