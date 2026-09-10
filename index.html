@@ -12,8 +12,11 @@
      Clarity allowances (www.clarity.ms / scripts.clarity.ms in script-src,
      *.clarity.ms in connect-src) removed 2026-09-10 — Clarity is disabled
      for good (see README.md), so keeping them would just be unused
-     attack surface with no functional benefit. -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-PJ5L7LJz3eUW8abpOLymB/Kc06wwqVvm+O91lFX/3Bg=' 'sha256-X2iIFO6ZnKw01nNOHBdHMVH9VgtcKi7UUPK8LC4IFFM=' https://www.googletagmanager.com https://connect.facebook.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://www.facebook.com data:; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://connect.facebook.net; base-uri 'self'; form-action 'self' https://form.webnary.studio">
+     attack surface with no functional benefit.
+     form-action removed 2026-09-10 — the page has no <form> element and,
+     as of the WhatsApp CTA switch, no link points at form.webnary.studio
+     anymore either, so the directive had nothing left to allow. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-PJ5L7LJz3eUW8abpOLymB/Kc06wwqVvm+O91lFX/3Bg=' 'sha256-qcGNQGYrTvtJoWBSnEiYDgo5ueTC3FQHxCRej+/ralM=' https://www.googletagmanager.com https://connect.facebook.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://www.facebook.com data:; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://connect.facebook.net; base-uri 'self'">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Webnary Studio — Des sites web qui vous trouvent des clients</title>
 <meta name="description" content="Studio web pour indépendants et entreprises en France. Aperçu gratuit sous 24h, à partir de 150€, sans engagement.">
@@ -55,17 +58,30 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type":"Question","name":"Comment se passe la prise de contact ?","acceptedAnswer":{"@type":"Answer","text":"Vous remplissez un court formulaire avec votre activité et vos envies pour le site. Selon le type de projet, un rendez-vous peut être proposé avant de vous envoyer votre aperçu."}},
+    {"@type":"Question","name":"Comment se passe la prise de contact ?","acceptedAnswer":{"@type":"Answer","text":"Vous m'envoyez un message sur WhatsApp avec votre activité et vos envies pour le site (je peux aussi vous transmettre le lien du formulaire si vous préférez). Selon le type de projet, un rendez-vous peut être proposé avant de vous envoyer votre aperçu."}},
     {"@type":"Question","name":"Le premier aperçu est-il vraiment gratuit ?","acceptedAnswer":{"@type":"Answer","text":"Oui, entièrement. Vous ne payez que si vous validez le résultat."}},
     {"@type":"Question","name":"Je n'ai pas encore de contenu ou de photos, c'est grave ?","acceptedAnswer":{"@type":"Answer","text":"Non. On démarre avec des placeholders et on les remplace dès que vous êtes prêt(e)."}},
     {"@type":"Question","name":"L'hébergement est-il compris ?","acceptedAnswer":{"@type":"Answer","text":"Ça dépend du type de projet. Le coût exact de l'hébergement, du domaine et des éventuels services supplémentaires est précisé avant le lancement."}},
     {"@type":"Question","name":"Puis-je modifier mon site moi-même après ?","acceptedAnswer":{"@type":"Answer","text":"Oui, selon la solution choisie. Les sites avec CMS permettent de modifier facilement les contenus vous-même, et nous pouvons également nous en occuper pour vous."}},
-    {"@type":"Question","name":"Dois-je forcément passer par un rendez-vous ?","acceptedAnswer":{"@type":"Answer","text":"Non. Pour un site vitrine, le formulaire suffit. Pour un site professionnel ou une boutique, un échange rapide est proposé si le projet le demande. Pour un projet sur-mesure, un rendez-vous est toujours prévu pour cadrer le devis."}},
+    {"@type":"Question","name":"Dois-je forcément passer par un rendez-vous ?","acceptedAnswer":{"@type":"Answer","text":"Non. Pour un site vitrine, un message sur WhatsApp suffit. Pour un site professionnel ou une boutique, un échange rapide est proposé si le projet le demande. Pour un projet sur-mesure, un rendez-vous est toujours prévu pour cadrer le devis."}},
     {"@type":"Question","name":"Et si je ne suis pas joignable, ou si vous ne l'êtes plus, après le paiement ?","acceptedAnswer":{"@type":"Answer","text":"Vous gardez un accès direct par WhatsApp, téléphone et email dès le premier contact — jamais un ticket anonyme. Pour les projets avec suivi, les modalités de support sont précisées avant de commencer."}}
   ]
 }
 </script>
 <link rel="stylesheet" href="/styles.css">
+<style>
+  /* wa-fixed (floating WhatsApp circle) hidden on mobile only, 2026-09-10.
+     Below the 860px nav breakpoint the sticky bottom bar (.sticky-cta)
+     already does this job, so showing both was redundant screen clutter.
+     Desktop (>860px) keeps the floating circle since .sticky-cta is
+     mobile-only there. Added here as an inline override rather than in
+     styles.css because that file isn't part of this working session —
+     functionally identical either way, safe to move into styles.css
+     later. To revert: delete this block. */
+  @media (max-width: 860px) {
+    .wa-fixed { display: none; }
+  }
+</style>
 
 <!-- Google tag, Meta Pixel, Microsoft Clarity.
      Moved out of an inline script block into tracking.js on 2026-09-10.
@@ -118,7 +134,7 @@ src="https://www.facebook.com/tr?id=1652232292927046&ev=PageView&noscript=1"
       <a href="#tarifs">Tarifs</a>
       <a href="#faq">FAQ</a>
     </nav>
-<a href="https://form.webnary.studio" class="btn btn-primary btn-sm nav-cta" target="_blank" rel="noopener">Réserver</a>
+<a href="https://wa.me/33767708253?text=Bonjour%20%21%20Je%20souhaite%20remplir%20le%20formulaire%20pour%20r%C3%A9server%20mon%20projet." class="btn btn-primary btn-sm nav-cta" target="_blank" rel="noopener">Réserver</a>
   </div>
 </header>
 
@@ -153,7 +169,7 @@ src="https://www.facebook.com/tr?id=1652232292927046&ev=PageView&noscript=1"
 
     <!-- Buttons -->
     <div class="hero-cta-row centered">
-      <a href="https://form.webnary.studio" class="btn btn-primary" target="_blank" rel="noopener">Remplissez le formulaire</a>
+      <a href="https://wa.me/33767708253?text=Bonjour%20%21%20Je%20souhaite%20remplir%20le%20formulaire%20pour%20r%C3%A9server%20mon%20projet." class="btn btn-primary" target="_blank" rel="noopener">Remplissez le formulaire</a>
       <a class="btn btn-outline" href="#apercus">Voir nos démos</a>
     </div>
 
@@ -462,7 +478,7 @@ src="https://www.facebook.com/tr?id=1652232292927046&ev=PageView&noscript=1"
           <li>Hébergement à vie</li>
         </ul>
         <p class="price-note">Options : contenu éditable (CMS) 55–80&nbsp;€ · formulaire vers Google Sheets 40–60&nbsp;€.</p>
-        <a href="https://form.webnary.studio" class="btn btn-outline price-cta" target="_blank" rel="noopener">Choisir ce plan</a>
+        <a href="https://wa.me/33767708253?text=Bonjour%20%21%20Je%20souhaite%20remplir%20le%20formulaire%20pour%20r%C3%A9server%20le%20plan%20Pr%C3%A9sence%20en%20Ligne%20%28150%E2%82%AC%29." class="btn btn-outline price-cta" target="_blank" rel="noopener">Choisir ce plan</a>
       </div>
 
       <!-- PLAN 2 (mis en avant) -->
@@ -482,7 +498,7 @@ src="https://www.facebook.com/tr?id=1652232292927046&ev=PageView&noscript=1"
           <li>Espace client personnel</li>
         </ul>
         <p class="price-note">Hébergement ensuite : ~8–18&nbsp;€/mois.</p>
-        <a href="https://form.webnary.studio" class="btn btn-primary price-cta" target="_blank" rel="noopener">Choisir ce plan</a>
+        <a href="https://wa.me/33767708253?text=Bonjour%20%21%20Je%20souhaite%20remplir%20le%20formulaire%20pour%20r%C3%A9server%20le%20plan%20Site%20%C3%89volutif%20%E2%80%94%20WordPress%20%28299%E2%82%AC%29." class="btn btn-primary price-cta" target="_blank" rel="noopener">Choisir ce plan</a>
       </div>
 
       <!-- PLAN 3 -->
@@ -516,7 +532,7 @@ src="https://www.facebook.com/tr?id=1652232292927046&ev=PageView&noscript=1"
           <li>Devis détaillé selon vos besoins</li>
         </ul>
         <p class="price-note">On cadre le projet ensemble avant de chiffrer — rien n'est estimé à l'aveugle.</p>
-        <a href="https://form.webnary.studio" class="btn btn-outline price-cta" target="_blank" rel="noopener">Demander un devis</a>
+        <a href="https://wa.me/33767708253?text=Bonjour%20%21%20Je%20souhaite%20remplir%20le%20formulaire%20pour%20un%20devis%20sur-mesure%20%28application%2Fplateforme%29." class="btn btn-outline price-cta" target="_blank" rel="noopener">Demander un devis</a>
       </div>
 
     </div>
@@ -677,7 +693,7 @@ src="https://www.facebook.com/tr?id=1652232292927046&ev=PageView&noscript=1"
     <div class="reveal">
       <details open>
         <summary>Comment se passe la prise de contact ?</summary>
-        <p>Vous remplissez un court formulaire avec votre activité et vos envies pour le site. Selon le type de projet, un rendez-vous peut être proposé avant de vous envoyer votre aperçu.</p>
+        <p>Vous m'envoyez un message sur WhatsApp avec votre activité et vos envies pour le site (je peux aussi vous transmettre le lien du formulaire si vous préférez). Selon le type de projet, un rendez-vous peut être proposé avant de vous envoyer votre aperçu.</p>
       </details>
       <details>
         <summary>Le premier aperçu est-il vraiment gratuit ?</summary>
@@ -705,7 +721,7 @@ src="https://www.facebook.com/tr?id=1652232292927046&ev=PageView&noscript=1"
 <details>
   <summary>Dois-je forcément passer par un rendez-vous ?</summary>
   <p>
-    Non. Pour un site vitrine, le formulaire suffit. Pour un site
+    Non. Pour un site vitrine, un message sur WhatsApp suffit. Pour un site
     professionnel ou une boutique, un échange rapide est proposé si
     le projet le demande. Pour un projet sur-mesure, un rendez-vous
     est toujours prévu pour cadrer le devis.
@@ -728,7 +744,7 @@ src="https://www.facebook.com/tr?id=1652232292927046&ev=PageView&noscript=1"
     <div class="cta-card">
       <h2>Prêt à voir votre site ?</h2>
       <p>Aperçu gratuit, réponse en 24h, aucun engagement.</p>
-      <a href="https://form.webnary.studio" class="btn btn-white" target="_blank" rel="noopener">Réserver mon aperçu →</a>
+      <a href="https://wa.me/33767708253?text=Bonjour%20%21%20Je%20souhaite%20remplir%20le%20formulaire%20pour%20r%C3%A9server%20mon%20projet." class="btn btn-white" target="_blank" rel="noopener">Réserver mon aperçu →</a>
     </div>
   </div>
 </section>
@@ -752,8 +768,11 @@ src="https://www.facebook.com/tr?id=1652232292927046&ev=PageView&noscript=1"
         </div>
         <div class="footer-col">
           <p class="footer-col-title">CONTACT</p>
-          <a href="https://form.webnary.studio" target="_blank" rel="noopener">Réserver un aperçu</a>
-          <a href="https://wa.me/33767708253?text=Bonjour%20%21%20J%27ai%20une%20question." target="_blank" rel="noopener">WhatsApp</a>
+          <!-- Merged 2026-09-10: this used to be two lines (a form.webnary.studio
+               link + a separate generic WhatsApp link). Now that the form link
+               itself opens WhatsApp, keeping both was just two paths to the same
+               place — see README for the full switch. -->
+          <a href="https://wa.me/33767708253?text=Bonjour%20%21%20Je%20souhaite%20remplir%20le%20formulaire%20pour%20r%C3%A9server%20mon%20projet." target="_blank" rel="noopener">Réserver sur WhatsApp</a>
           <a href="mailto:contact@webnary.studio">contact@webnary.studio</a>
           <a href="https://www.instagram.com/webnary.studio/" target="_blank" rel="noopener">Instagram</a>
           <a href="https://webnary.studio">webnary.studio</a>
@@ -767,7 +786,7 @@ src="https://www.facebook.com/tr?id=1652232292927046&ev=PageView&noscript=1"
 </main>
 
 <div class="sticky-cta">
-  <a href="https://form.webnary.studio" class="btn btn-primary" target="_blank" rel="noopener">
+  <a href="https://wa.me/33767708253?text=Bonjour%20%21%20Je%20souhaite%20remplir%20le%20formulaire%20pour%20r%C3%A9server%20mon%20projet." class="btn btn-primary" target="_blank" rel="noopener">
     <i data-lucide="calendar-check" style="width:18px; height:18px; stroke-width:2.5px;"></i> Réserver mon aperçu
   </a>
 </div>

@@ -6,6 +6,88 @@ Newest entries at the top.
 
 ---
 
+## 2026-09-10 — Switch primary contact flow from form.webnary.studio to WhatsApp
+
+**Problem:** every CTA on the page (nav, hero, both live plan cards, the
+devis link, bottom-of-page card, footer, sticky mobile bar) linked to
+`https://form.webnary.studio`. The decision was made to lead with a direct
+WhatsApp message instead — the form isn't being retired, just no longer the
+first click. If a visitor specifically asks for the form link during a
+WhatsApp chat, it gets pasted manually; no code path needs to serve it.
+
+**What changed:**
+- All CTAs above switched from `https://form.webnary.studio` to
+  `https://wa.me/33767708253?text=...` with a pre-filled message:
+  - Nav CTA, hero CTA, bottom-of-page CTA, footer, sticky mobile bar (5
+    locations) all send the same generic message: *"Bonjour ! Je souhaite
+    remplir le formulaire pour réserver mon projet."*
+  - Plan 1 (Présence en Ligne, 150€) and Plan 2 (Site Évolutif — WordPress,
+    299€) "Choisir ce plan" buttons send a plan-specific version naming the
+    plan and price. Plan 3 (Boutique Shopify) is untouched — it's still the
+    disabled "Bientôt disponible" placeholder.
+  - "Demander un devis" (Plan 4, sur-mesure) sends its own devis-specific
+    message.
+  - The pre-existing floating WhatsApp circle (`.wa-fixed`) and its casual
+    "J'ai une question" message were left as-is — that's a separate, lower
+    -commitment entry point and was never one of the CTA locations above.
+- Hero button label ("Remplissez le formulaire") was kept unchanged on
+  purpose: it now opens WhatsApp with a message that itself says "je
+  souhaite remplir le formulaire," so the label and the message agree
+  rather than contradict each other.
+- FAQ text updated (both the visible `<details>` blocks and the matching
+  `FAQPage` JSON-LD, which had to stay in sync) to describe the WhatsApp
+  -first flow honestly:
+  - "Comment se passe la prise de contact ?" now mentions sending a
+    WhatsApp message first, with the form link offered as an alternative
+    on request.
+  - "Dois-je forcément passer par un rendez-vous ?" — "le formulaire
+    suffit" became "un message sur WhatsApp suffit."
+- Footer's CONTACT column had two near-duplicate lines once the switch
+  landed ("Réserver un aperçu" → form, and a separate plain "WhatsApp" →
+  wa.me). Merged into a single "Réserver sur WhatsApp" line using the
+  generic reservation message; the redundant second line was removed.
+- CSP: dropped `form-action 'self' https://form.webnary.studio` entirely.
+  The page has no `<form>` element and, after this switch, no link points
+  at `form.webnary.studio` anymore either — the directive had nothing
+  left to permit.
+- CSP script-src hash for the `FAQPage` JSON-LD block was recomputed
+  (`sha256-qcGNQGYrTvtJoWBSnEiYDgo5ueTC3FQHxCRej+/ralM=`) since its text
+  content changed. The `ProfessionalService` JSON-LD block was untouched,
+  so its hash is unchanged.
+
+**To revert:** swap the `wa.me` hrefs back to `https://form.webnary.studio`
+on all 8 CTAs (the 5 generic ones + 2 plans + devis), restore the two
+FAQ answers' old wording (both visible and JSON-LD), re-add
+`form-action 'self' https://form.webnary.studio` to the CSP, restore the
+old JSON-LD hash `sha256-X2iIFO6ZnKw01nNOHBdHMVH9VgtcKi7UUPK8LC4IFFM=` in
+its place, and split the footer's merged line back into a "Réserver un
+aperçu" (form) line plus a separate generic "WhatsApp" line if desired.
+
+---
+
+## 2026-09-10 — Hide the floating WhatsApp circle on mobile only
+
+**Problem:** below the 860px nav breakpoint, the floating `.wa-fixed`
+circle and the sticky bottom bar (`.sticky-cta`) were both visible at
+once, doing the same job (surfacing a WhatsApp/contact CTA) and eating
+screen space on small viewports.
+
+**What changed:** added a small `<style>` block directly in `index.html`,
+right after the `styles.css` link, hiding `.wa-fixed` under a
+`max-width: 860px` media query. Desktop is untouched — `.sticky-cta` is
+mobile-only there, so the floating circle is still the only persistent
+CTA on larger screens.
+
+**Why inline instead of in `styles.css`:** `styles.css` isn't part of this
+working session, so it couldn't be edited directly. This is functionally
+identical to putting the same rule in the stylesheet — safe to move it
+there later if convenient.
+
+**To revert:** delete the `<style>` block (clearly commented, sits right
+after the `styles.css` `<link>` in `<head>`).
+
+---
+
 ## 2026-09-10 — Right-size the "Nos aperçus" portfolio images (`srcset`/`sizes`)
 
 **Problem:** PageSpeed Insights flagged ~182 KiB of "Améliorer l'affichage des
