@@ -8,8 +8,12 @@
      JSON-LD block is edited, or this silently breaks the same way the
      old hashes did. The tracking bootstrap is no longer inline (see
      tracking.js), so it needs no hash at all — only 'self', already
-     present below. -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-PJ5L7LJz3eUW8abpOLymB/Kc06wwqVvm+O91lFX/3Bg=' 'sha256-X2iIFO6ZnKw01nNOHBdHMVH9VgtcKi7UUPK8LC4IFFM=' https://www.googletagmanager.com https://connect.facebook.net https://www.clarity.ms https://scripts.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://www.facebook.com data:; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://connect.facebook.net https://*.clarity.ms; base-uri 'self'; form-action 'self' https://form.webnary.studio">
+     present below.
+     Clarity allowances (www.clarity.ms / scripts.clarity.ms in script-src,
+     *.clarity.ms in connect-src) removed 2026-09-10 — Clarity is disabled
+     for good (see README.md), so keeping them would just be unused
+     attack surface with no functional benefit. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-PJ5L7LJz3eUW8abpOLymB/Kc06wwqVvm+O91lFX/3Bg=' 'sha256-X2iIFO6ZnKw01nNOHBdHMVH9VgtcKi7UUPK8LC4IFFM=' https://www.googletagmanager.com https://connect.facebook.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://www.facebook.com data:; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://connect.facebook.net; base-uri 'self'; form-action 'self' https://form.webnary.studio">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Webnary Studio — Des sites web qui vous trouvent des clients</title>
 <meta name="description" content="Studio web pour indépendants et entreprises en France. Aperçu gratuit sous 24h, à partir de 150€, sans engagement.">
@@ -246,8 +250,13 @@ src="https://www.facebook.com/tr?id=1652232292927046&ev=PageView&noscript=1"
       <div class="carousel-card card-pos-0">
         <a href="Demos/1/" class="carousel-card-link" aria-label="Voir la démo 1">
           <picture>
-            <source srcset="images/portfolio-1.webp" type="image/webp">
-            <img src="images/portfolio-1.jpg" alt="Montagne" width="280" height="400" loading="lazy" decoding="async" draggable="false">
+            <source type="image/webp"
+                    srcset="images/portfolio-1-440w.webp 440w, images/portfolio-1-560w.webp 560w"
+                    sizes="(max-width: 860px) 220px, 280px">
+            <img src="images/portfolio-1-560w.jpg"
+                 srcset="images/portfolio-1-440w.jpg 440w, images/portfolio-1-560w.jpg 560w"
+                 sizes="(max-width: 860px) 220px, 280px"
+                 alt="Montagne" width="280" height="400" loading="lazy" decoding="async" draggable="false">
           </picture>
         </a>
       </div>
@@ -256,8 +265,13 @@ src="https://www.facebook.com/tr?id=1652232292927046&ev=PageView&noscript=1"
       <div class="carousel-card card-pos-1">
         <a href="Demos/3/" class="carousel-card-link" aria-label="Voir la démo 3">
           <picture>
-            <source srcset="images/portfolio-3.webp" type="image/webp">
-            <img src="images/portfolio-3.jpg" width="280" height="400" alt="Avion" loading="lazy" decoding="async" draggable="false">
+            <source type="image/webp"
+                    srcset="images/portfolio-3-440w.webp 440w, images/portfolio-3-560w.webp 560w"
+                    sizes="(max-width: 860px) 220px, 280px">
+            <img src="images/portfolio-3-560w.jpg"
+                 srcset="images/portfolio-3-440w.jpg 440w, images/portfolio-3-560w.jpg 560w"
+                 sizes="(max-width: 860px) 220px, 280px"
+                 alt="Avion" width="280" height="400" loading="lazy" decoding="async" draggable="false">
           </picture>
         </a>
       </div>
@@ -266,8 +280,13 @@ src="https://www.facebook.com/tr?id=1652232292927046&ev=PageView&noscript=1"
       <div class="carousel-card card-pos-2">
         <a href="Demos/2/" class="carousel-card-link" aria-label="Voir la démo 2">
           <picture>
-            <source srcset="images/portfolio-2.webp" type="image/webp">
-            <img src="images/portfolio-2.jpg" alt="Lac et quai" width="280" height="400" loading="lazy" decoding="async" draggable="false">
+            <source type="image/webp"
+                    srcset="images/portfolio-2-440w.webp 440w, images/portfolio-2-560w.webp 560w"
+                    sizes="(max-width: 860px) 220px, 280px">
+            <img src="images/portfolio-2-560w.jpg"
+                 srcset="images/portfolio-2-440w.jpg 440w, images/portfolio-2-560w.jpg 560w"
+                 sizes="(max-width: 860px) 220px, 280px"
+                 alt="Lac et quai" width="280" height="400" loading="lazy" decoding="async" draggable="false">
           </picture>
         </a>
       </div>
@@ -276,8 +295,13 @@ src="https://www.facebook.com/tr?id=1652232292927046&ev=PageView&noscript=1"
       <div class="carousel-card card-pos-3">
         <a href="Demos/4/" class="carousel-card-link" aria-label="Voir la démo 4">
           <picture>
-            <source srcset="images/portfolio-4.webp" type="image/webp">
-            <img src="images/portfolio-4.jpg" width="280" height="400" alt="Appareil photo" loading="lazy" decoding="async" draggable="false">
+            <source type="image/webp"
+                    srcset="images/portfolio-4-440w.webp 440w, images/portfolio-4-560w.webp 560w"
+                    sizes="(max-width: 860px) 220px, 280px">
+            <img src="images/portfolio-4-560w.jpg"
+                 srcset="images/portfolio-4-440w.jpg 440w, images/portfolio-4-560w.jpg 560w"
+                 sizes="(max-width: 860px) 220px, 280px"
+                 alt="Appareil photo" width="280" height="400" loading="lazy" decoding="async" draggable="false">
           </picture>
         </a>
       </div>
@@ -286,8 +310,13 @@ src="https://www.facebook.com/tr?id=1652232292927046&ev=PageView&noscript=1"
       <div class="carousel-card card-pos-4">
         <a href="Demos/5/" class="carousel-card-link" aria-label="Voir la démo 5">
           <picture>
-            <source srcset="images/portfolio-5.webp" type="image/webp">
-            <img src="images/portfolio-5.jpg" width="280" height="400" alt="Randonneur" loading="lazy" decoding="async" draggable="false">
+            <source type="image/webp"
+                    srcset="images/portfolio-5-440w.webp 440w, images/portfolio-5-560w.webp 560w"
+                    sizes="(max-width: 860px) 220px, 280px">
+            <img src="images/portfolio-5-560w.jpg"
+                 srcset="images/portfolio-5-440w.jpg 440w, images/portfolio-5-560w.jpg 560w"
+                 sizes="(max-width: 860px) 220px, 280px"
+                 alt="Randonneur" width="280" height="400" loading="lazy" decoding="async" draggable="false">
           </picture>
         </a>
       </div>
