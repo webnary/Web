@@ -2,13 +2,14 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<!-- script-src hashes updated to match the actual inline scripts below:
-     the old gtag/fbq/clarity hashes are gone (that content is now one
-     merged, deferred block — see further down), and the FAQPage
-     JSON-LD hash was missing before, which meant the CSP was silently
-     blocking that script (as it was already doing to fbq('track','Lead'),
-     also fixed below). -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-ZfdSG9Eku9B7cv3SsbJLpooPQ97oVq/Bri7s5k1Ct78=' 'sha256-YesrB8otHD45vuplnqtRwuYAaS88ccgvhNLe1kJWZV4=' 'sha256-EzZOaIz/1RBPuvi1Ybkn9gT6TpxjZ1ntn4vTiscrDgM=' https://www.googletagmanager.com https://connect.facebook.net https://www.clarity.ms https://scripts.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://www.facebook.com data:; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://connect.facebook.net https://i.clarity.ms https://c.clarity.ms https://k.clarity.ms https://y.clarity.ms; base-uri 'self'; form-action 'self' https://form.webnary.studio">
+<!-- script-src hashes below cover ONLY the two remaining inline scripts
+     (the JSON-LD blocks). They are recomputed from this file's actual
+     content — verify them again with a hash tool any time either
+     JSON-LD block is edited, or this silently breaks the same way the
+     old hashes did. The tracking bootstrap is no longer inline (see
+     tracking.js), so it needs no hash at all — only 'self', already
+     present below. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-PJ5L7LJz3eUW8abpOLymB/Kc06wwqVvm+O91lFX/3Bg=' 'sha256-X2iIFO6ZnKw01nNOHBdHMVH9VgtcKi7UUPK8LC4IFFM=' https://www.googletagmanager.com https://connect.facebook.net https://www.clarity.ms https://scripts.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://www.facebook.com data:; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://connect.facebook.net https://i.clarity.ms https://c.clarity.ms https://k.clarity.ms https://y.clarity.ms; base-uri 'self'; form-action 'self' https://form.webnary.studio">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Webnary Studio — Des sites web qui vous trouvent des clients</title>
 <meta name="description" content="Studio web pour indépendants et entreprises en France. Aperçu gratuit sous 24h, à partir de 150€, sans engagement.">
@@ -63,66 +64,19 @@
 <link rel="stylesheet" href="/styles.css">
 
 <!-- Google tag, Meta Pixel, Microsoft Clarity.
-     These used to run immediately in <head> — PageSpeed's "third-party
-     code" and Total Blocking Time findings trace back to this: their
-     execution was competing with the page's own first render for
-     main-thread time. Now deferred to window 'load', with an
-     interaction fallback (scroll/tap/key) so a fast visitor who
-     leaves before 'load' fires still gets counted. As a side effect
-     this also fixes fbq('track','Lead'): it used to live in its own
-     separate inline script whose hash was never added to the CSP
-     above, so the CSP was silently blocking it — the Lead event was
-     not actually firing. It's merged into this block now, under this
-     block's hash.
-     Trade-off to know about: PageView/Lead now fire a little later
-     (after 'load' or first touch) instead of instantly — fine for
-     almost every visit, but revert to firing eagerly if exact-instant
-     tracking ever matters more than the perf win. -->
-<script>
-(function(){
-  var started = false;
-  function start(){
-    if (started) return;
-    started = true;
-
-    // Google tag (gtag.js)
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = window.gtag || function(){dataLayer.push(arguments);};
-    gtag('js', new Date());
-    gtag('config', 'G-N6NECZ186Y');
-    var gtmScript = document.createElement('script');
-    gtmScript.async = true;
-    gtmScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-N6NECZ186Y';
-    document.head.appendChild(gtmScript);
-
-    // Meta Pixel
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1652232292927046');
-    fbq('track', 'PageView');
-
-    // Microsoft Clarity
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "y72hvm79s1");
-  }
-
-   var isAdClick = /[?&](fbclid|gclid)=/.test(location.search);
-  if (isAdClick || document.readyState === 'complete') { start(); }
-  else { window.addEventListener('load', start); }
-  ['pointerdown', 'keydown', 'scroll'].forEach(function(evt){
-    window.addEventListener(evt, start, { once: true, passive: true });
-  });
-})();
-</script>
+     Moved out of an inline script block into tracking.js on 2026-09-10.
+     Reason: CSP is 'default-src self', and an inline script is only
+     allowed if its exact byte-for-byte hash is whitelisted in the CSP
+     meta tag above. Two prior attempts to keep this inline and
+     hand-maintain its hash both silently broke (the hash in the CSP
+     stopped matching the script's actual content), which meant
+     gtag/fbq/clarity never ran and 0 tracking data was collected.
+     As an external file loaded from 'self', it needs no hash at all
+     and can never drift out of sync with the CSP again.
+     Deferred to window 'load' (with a scroll/tap/key fallback for
+     visitors who leave first) so third-party tracking code doesn't
+     compete with first paint — this part is unchanged from before. -->
+<script src="/tracking.js" defer></script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1652232292927046&ev=PageView&noscript=1"
 /></noscript>
