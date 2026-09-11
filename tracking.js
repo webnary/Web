@@ -9,6 +9,23 @@
     window.gtag = window.gtag || function(){dataLayer.push(arguments);};
     gtag('js', new Date());
     gtag('config', 'G-N6NECZ186Y');
+    
+     // Track all WhatsApp button clicks
+  document.addEventListener('click', function(event) {
+    var target = event.target;
+    var link = target && target.closest
+      ? target.closest('a[href*="wa.me"]')
+      : null;
+
+    if (!link) return;
+
+    gtag('event', 'whatsapp_click', {
+      link_text: (link.textContent || '').trim(),
+      link_url: link.href,
+      cta_class: link.className || '',
+      transport_type: 'beacon'
+    });
+  });
     var gtmScript = document.createElement('script');
     gtmScript.async = true;
     gtmScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-N6NECZ186Y';
