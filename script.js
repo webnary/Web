@@ -6,13 +6,20 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ---------- Non-blocking Google Fonts swap ----------
-     index.html now loads the Google Fonts CSS as <link rel="preload"
-     as="style"> instead of a blocking <link rel="stylesheet">, so it
-     no longer holds up first paint. Flipping rel to "stylesheet" here
-     applies it — this reuses the same request the preload already
-     started (same URL, same browser cache entry), it doesn't trigger
-     a second fetch. */
+  /* ---------- Non-blocking stylesheet swap (fonts + styles.css) ----------
+     index.html now loads BOTH the Google Fonts CSS and the site's own
+     styles.css as <link rel="preload" as="style"> instead of blocking
+     <link rel="stylesheet"> tags, so neither holds up first paint —
+     the hero above the fold is covered by the critical CSS inlined
+     directly in <head>, so there's nothing unstyled to flash while
+     these load in. Flipping rel to "stylesheet" here applies each one
+     — this reuses the same request the preload already started (same
+     URL, same browser cache entry), it doesn't trigger a second fetch.
+     Deliberately NOT done via an inline onload= attribute on the
+     <link> itself: the page's CSP only allows two specific hashed
+     inline scripts, so an inline event handler would just get
+     silently blocked. Going through this external, already-'self'-
+     allowed file avoids that. */
   document.querySelectorAll('link[rel="preload"][as="style"]').forEach(link => {
     link.rel = 'stylesheet';
   });
